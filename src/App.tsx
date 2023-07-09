@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./App.scss";
 import { CategoryContainer } from "./components/CategoryContainer";
 import { Category } from "./types/Category";
 
@@ -35,20 +35,17 @@ export const categories: Category[] = [
   },
   {
     id: 7,
-    title: "inspiration",
-  },
-  {
-    id: 8,
     title: "gifts",
   },
 ];
 
 const App = () => {
   return (
-    <div className="categories-container">
-      <div className="category-container">
+    <div className="app">
+      <h2>KRUSH.</h2>
+      <div className="categories-container">
         {categories.map((category) => {
-          return <CategoryContainer category={category} />;
+          return <CategoryContainer category={category} key={category.id} />;
         })}
       </div>
     </div>

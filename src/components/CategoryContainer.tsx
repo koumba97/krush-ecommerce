@@ -1,4 +1,5 @@
 import { Category } from "../types/Category";
+import "./CategoryContainer.scss";
 
 interface IProps {
   category: Category;
@@ -6,8 +7,10 @@ interface IProps {
 
 export const CategoryContainer = ({ category }: IProps) => {
   return (
-    <div className="category-body-container" key={category.id}>
-      <h2>{category.title.toUpperCase()}</h2>
+    <div className="category-container">
+      <div className="category-body-container">
+        <h3>{category.title.toUpperCase()}</h3>
+      </div>
     </div>
   );
 };
