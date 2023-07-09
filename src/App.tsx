@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./App.css";
+import { CategoryContainer } from "./components/CategoryContainer";
+import { Category } from "./types/Category";
 
-export const categories: { id: number; title: string }[] = [
+export const categories: Category[] = [
   {
     id: 1,
     title: "bestseller",
@@ -41,20 +43,16 @@ export const categories: { id: number; title: string }[] = [
   },
 ];
 
-function App() {
+const App = () => {
   return (
     <div className="categories-container">
       <div className="category-container">
         {categories.map((category) => {
-          return (
-            <div className="category-body-container" key={category.id}>
-              <h2>{category.title.toUpperCase()}</h2>
-            </div>
-          );
+          return <CategoryContainer category={category} />;
         })}
       </div>
     </div>
   );
-}
+};
 
 export default App;
