@@ -1,0 +1,13 @@
+@import "../../index.scss";
+
+footer {
+  background-color: $dark-grey;
+  color: white;
+  padding: 20px;
+  min-height: 200px;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
