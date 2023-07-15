@@ -7,12 +7,13 @@ interface IProps {
 
 export const CategoryContainer = ({ category }: IProps) => {
   return (
-    <div
-      className="category-container"
-      style={{ backgroundImage: `url(${category.imageUrl})` }}
-    >
+    <div className="category-container">
+      <div
+        className="image-category"
+        style={{ backgroundImage: `url(${category.imageUrl})` }}
+      ></div>
       <div className="category-body-container">
-        <h3>{category.title.toUpperCase()}</h3>
+        <h3 className="category-name">{category.name.toUpperCase()}</h3>
       </div>
     </div>
   );
