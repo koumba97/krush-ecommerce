@@ -2,7 +2,7 @@
   max-width: 1280px;
   margin: auto auto 80px auto;
   text-align: center;
-  padding: 0 30px;
+  padding: 0 60px;
 }
 
 .categories-container {
@@ -11,4 +11,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
+}
+
+.big-category-container {
+  background-color: pink;
+  min-height: 200px;
+  margin: 40px -60px;
 }
