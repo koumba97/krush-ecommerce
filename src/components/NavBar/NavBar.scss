@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 nav {
   padding: 15px 60px;
   display: flex;
@@ -13,5 +15,28 @@ nav {
   .nav-content {
     display: flex;
     gap: 20px;
+  }
+
+  .nav-link {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    transition: background 0.3s transform 0.3s;
+    cursor: pointer;
+    i {
+      font-size: 30px;
+      margin: auto;
+      color: $dark-grey;
+    }
+    &:hover {
+      background-color: $light-grey;
+      i {
+        color: $brand-color;
+      }
+    }
+    &:active {
+      transform: scale(0.9);
+    }
   }
 }

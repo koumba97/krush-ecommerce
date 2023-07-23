@@ -1,7 +1,4 @@
 import "./NavBar.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { faHeart, faUserCircle } from "@fortawesome/free-regular-svg-icons";
 import Logo from "../Logo/Logo";
 
 const NavBar = () => {
@@ -9,9 +6,17 @@ const NavBar = () => {
     <nav>
       <Logo />
       <div className="nav-content">
-        <FontAwesomeIcon icon={faGlobe} size="xl" />
-        <FontAwesomeIcon icon={faUserCircle} size="xl" />
-        <FontAwesomeIcon icon={faCartShopping} size="xl" />
+        <a className="nav-link">
+          <i className="lar la-user-circle"></i>
+        </a>
+
+        <a className="nav-link">
+          <i className="lar la-heart"></i>
+        </a>
+
+        <a className="nav-link">
+          <i className="las la-shopping-bag"></i>
+        </a>
       </div>
     </nav>
   );
