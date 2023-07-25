@@ -14,12 +14,15 @@ const App = () => {
 
       <div className="page-content">
         <PromoBar />
-        <CategoryPreview />
-        <div className="categories-container">
+        <CategoryPreview
+          category={CategoriesData[0]}
+          categoryList={CategoriesData}
+        />
+        {/* <div className="categories-container">
           {CategoriesData.map((category) => {
             return <CategoryContainer category={category} key={category.id} />;
           })}
-        </div>
+        </div> */}
 
         <div className="big-category-container"></div>
       </div>

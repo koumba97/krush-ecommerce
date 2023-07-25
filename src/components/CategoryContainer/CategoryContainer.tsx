@@ -3,6 +3,7 @@ import "./CategoryContainer.scss";
 
 interface IProps {
   category: Category;
+  categoryList: Category[];
 }
 
 export const CategoryContainer = ({ category }: IProps) => {

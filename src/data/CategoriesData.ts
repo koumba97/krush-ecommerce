@@ -3,7 +3,7 @@ import { Category } from "../types/Category";
 export const CategoriesData: Category[] = [
   {
     id: 1,
-    name: "plants & pots",
+    name: "plants",
     imageUrl:
       "https://images.urbndata.com/is/image/Anthropologie/45544935AA_000_b10?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=1080",
   },
