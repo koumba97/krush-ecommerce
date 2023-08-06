@@ -6,8 +6,17 @@ import { CategoryContainer } from "./components/CategoryContainer/CategoryContai
 import { CategoriesData } from "./data/CategoriesData.ts";
 import PromoBar from "./components/PromoBar/PromoBar.tsx";
 import CategoryPreview from "./components/CategoryPreview/CategoryPreview.tsx";
+import { Category } from "./types/Category.ts";
 
 const App = () => {
+  const [currentCategory, setCurrentCategory] = useState<Category>(
+    CategoriesData[0]
+  );
+
+  const changeCategoryHandler = (categoryId: number) => {
+    setCurrentCategory(CategoriesData[categoryId - 1]);
+  };
+
   return (
     <div className="app">
       <NavBar />
@@ -15,16 +24,15 @@ const App = () => {
       <div className="page-content">
         <PromoBar />
         <CategoryPreview
-          category={CategoriesData[0]}
+          category={currentCategory}
           categoryList={CategoriesData}
+          changeCategory={changeCategoryHandler}
         />
         {/* <div className="categories-container">
           {CategoriesData.map((category) => {
             return <CategoryContainer category={category} key={category.id} />;
           })}
         </div> */}
-
-        <div className="big-category-container"></div>
       </div>
       <Footer />
     </div>
