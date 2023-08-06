@@ -3,6 +3,7 @@
 .promo-bar {
   margin-bottom: 80px;
   padding: 20px;
+  background-image: url("https://usercontent.one/wp/mariannetaylor.co.uk/wp-content/uploads/2018/07/Colourful-content-creation-for-Pirya-Living.-Product-photography-styling-by-Marianne-Taylor._0006.jpg?media=1637181377");
   //background-image: url("../../assets/images/abstract-patterns/abstract-bg.svg");
   //background-image: url("https://i.pinimg.com/564x/d7/91/e9/d791e9d043157103db074c2974718ef4.jpg");
   background-color: $grey-100;
@@ -25,11 +26,14 @@
   //   font-style: italic;
   // }
   .catching-phrase {
-    font-size: 64px;
+    font-size: 56px;
     text-transform: uppercase;
     font-weight: 900;
     font-style: italic;
     max-width: 500px;
     text-align: left;
+    margin: 0;
+    color: white;
+    text-shadow: 3px 3px 0px black;
   }
 }
