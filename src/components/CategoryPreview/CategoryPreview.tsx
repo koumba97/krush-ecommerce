@@ -1,4 +1,6 @@
+import { ArticlesData } from "../../data/ArticlesData";
 import { Category } from "../../types/Category";
+import { Article } from "../Article/Article";
 import "./CategoryPreview.scss";
 import { useState, useEffect } from "react";
 
@@ -57,7 +59,7 @@ const CategoryPreview = ({ category, categoryList, changeCategory }: IProp) => {
           }`}
         >
           {[...Array(6)].map((x, i) => (
-            <div className="article" key={`article-${i}`}></div>
+            <Article key={`article-${i}`} article={ArticlesData[i]} />
           ))}
         </div>
       </div>

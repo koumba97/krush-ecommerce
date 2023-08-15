@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+.article {
+  .image-article {
+    width: 230px;
+    height: 270px;
+    margin: auto;
+    background-size: cover;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .article-name {
+    margin: 0;
+    text-align: left;
+    font-weight: 600;
+  }
+  .article-price {
+    margin: 0;
+    text-align: left;
+    color: $brand-color;
+    font-size: 16px;
+  }
+}

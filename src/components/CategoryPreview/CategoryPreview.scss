@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   gap: 32px;
-  align-items: flex-end;
+  align-items: center;
 
   .category-side {
     h1 {
@@ -86,11 +86,11 @@
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       gap: 16px;
-      .article {
-        background-color: $grey-100;
-        height: 270px;
-        border-radius: 12px;
-      }
+      // .article {
+      //   background-color: $grey-100;
+      //   height: 270px;
+      //   border-radius: 12px;
+      // }
     }
   }
   .transition {
