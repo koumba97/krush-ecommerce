@@ -20,6 +20,9 @@ export const Article = ({ article }: IProps) => {
         onMouseLeave={() => setImageCover(article.images[0])}
       >
         <LikeButton isLiked={false} />
+        {article.bestseller ? (
+          <div className="bestseller-label">Bestseller</div>
+        ) : null}
       </div>
       <div className="article-details-container">
         <h3 className="article-name">{article.name}</h3>

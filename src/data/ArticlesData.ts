@@ -32,6 +32,7 @@ export const ArticlesData: Article[] = [
       value: 35.9,
       currency: "€",
     },
+    bestseller: true,
   },
   {
     id: 3,
@@ -64,6 +65,7 @@ export const ArticlesData: Article[] = [
       value: 44.9,
       currency: "€",
     },
+    bestseller: true,
   },
   {
     id: 5,

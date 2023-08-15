@@ -8,4 +8,5 @@ export interface Article {
   images: string[];
   price: Price;
   description: string;
+  bestseller?: boolean;
 }
