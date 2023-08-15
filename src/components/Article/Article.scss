@@ -2,12 +2,18 @@
 
 .article {
   .image-article {
-    width: 230px;
-    height: 270px;
+    width: 222px;
+    height: 262px;
     margin: auto;
     background-size: cover;
     border-radius: 8px;
+    padding: 8px;
     cursor: pointer;
+
+    .like-button {
+      margin-left: auto;
+      float: right;
+    }
   }
   .article-name {
     margin: 0;

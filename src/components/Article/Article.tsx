@@ -1,4 +1,6 @@
+import { faL } from "@fortawesome/free-solid-svg-icons";
 import { Article as ArticleType } from "../../types/Article";
+import { LikeButton } from "../LikeButton/LikeButton";
 import "./Article.scss";
 import { useState } from "react";
 
@@ -16,7 +18,9 @@ export const Article = ({ article }: IProps) => {
         style={{ backgroundImage: `url(${imageCover})` }}
         onMouseEnter={() => setImageCover(article.images[1])}
         onMouseLeave={() => setImageCover(article.images[0])}
-      ></div>
+      >
+        <LikeButton isLiked={false} />
+      </div>
       <div className="article-details-container">
         <h3 className="article-name">{article.name}</h3>
         <p className="article-price">
