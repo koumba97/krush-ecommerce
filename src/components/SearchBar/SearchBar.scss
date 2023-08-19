@@ -6,6 +6,8 @@
   border-radius: 100px;
   padding: 12px 16px;
   background-color: $grey-100;
+  border: solid 2px transparent;
+  transition: 0.2s border;
 
   input[type="text"] {
     border: none;
@@ -16,8 +18,24 @@
     &::placeholder {
       color: $grey-200;
     }
+
+    &:focus {
+      //box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    }
   }
+  &:focus-within {
+    box-shadow: 0px 0px 2px 3px #ff6c8544;
+    border: solid 2px #fca7b5;
+    &:hover {
+      border: solid 2px #fca7b5;
+    }
+  }
+
   i {
     color: $grey-900;
+  }
+
+  &:hover {
+    border: solid 2px $grey-200;
   }
 }
