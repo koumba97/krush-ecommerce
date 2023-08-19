@@ -18,7 +18,7 @@ const CategoryPreview = ({ category, categoryList, changeCategory }: IProp) => {
 
   return (
     <section className="category-preview">
-      <div className="category-side">
+      {/* <div className="category-side">
         <h1 className={category.id == activeCategory ? "transition" : ""}>
           #{category.name}
         </h1>
@@ -34,12 +34,12 @@ const CategoryPreview = ({ category, categoryList, changeCategory }: IProp) => {
           ></div>
           <div className="category-body-container"></div>
         </div>
-      </div>
+      </div> */}
       <div className="preview-side">
         <div className="category-list-container">
           {categoryList.map((categoryItem) => {
             return (
-              <p
+              <div
                 key={`category-${categoryItem.name}`}
                 className={`category-link
                   ${category.id == categoryItem.id ? "active" : ""}
@@ -48,8 +48,9 @@ const CategoryPreview = ({ category, categoryList, changeCategory }: IProp) => {
                   changeCategory(categoryItem.id);
                 }}
               >
-                {categoryItem.name}
-              </p>
+                <p>{categoryItem.name}</p>
+                <i className={categoryItem.iconClass} />
+              </div>
             );
           })}
         </div>

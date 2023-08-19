@@ -5,4 +5,5 @@ export interface Category {
   name: CategoryList;
   title: string;
   imageUrl: string;
+  iconClass: string;
 }
