@@ -9,9 +9,7 @@ import CategoryPreview from './components/CategoryPreview/CategoryPreview.tsx'
 import { Category } from './types/Category.ts'
 
 const App = () => {
-    const [currentCategory, setCurrentCategory] = useState<Category>(
-        CategoriesData[0]
-    )
+    const [currentCategory, setCurrentCategory] = useState<Category>(CategoriesData[0])
 
     const changeCategoryHandler = (categoryId: number) => {
         setCurrentCategory(CategoriesData[categoryId - 1])
@@ -24,7 +22,7 @@ const App = () => {
             <div className="page-content">
                 <PromoBar />
                 <CategoryPreview
-                    category={currentCategory}
+                    currentCategory={currentCategory}
                     categoryList={CategoriesData}
                     changeCategory={changeCategoryHandler}
                 />
