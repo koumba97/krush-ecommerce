@@ -1,48 +1,48 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 nav {
-  padding: 32px 64px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .krush-logo {
-    flex: 1;
-  }
-
-  .search-bar {
-    flex: 1;
-  }
-
-  .links-container {
+    padding: 32px 64px;
     display: flex;
-    flex: 1;
-    width: max-content;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
 
-    .nav-link {
-      border-radius: 100%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      background-color: transparent;
-      transition: background-color 0.3s linear, transform 0.3s linear;
-      cursor: pointer;
-
-      i {
-        font-size: 30px;
-        margin: auto;
-        color: $grey-400;
-      }
-      &:hover {
-        background-color: $grey-100;
-        i {
-          color: $grey-900;
-        }
-      }
-      &:active {
-        transform: scale(0.9);
-      }
+    .krush-logo {
+        flex: 1;
     }
-  }
+
+    .search-bar {
+        flex: 1;
+    }
+
+    .links-container {
+        display: flex;
+        flex: 1;
+        width: max-content;
+        justify-content: flex-end;
+
+        .nav-link {
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            background-color: transparent;
+            transition: background-color 0.3s linear, transform 0.3s linear;
+            cursor: pointer;
+
+            i {
+                font-size: 30px;
+                margin: auto;
+                color: $grey-400;
+            }
+            &:hover {
+                background-color: $grey-100;
+                i {
+                    color: $grey-900;
+                }
+            }
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
 }

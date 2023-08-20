@@ -1,13 +1,13 @@
-@import "../../variables.scss";
+@import '../../variables.scss';
 
 footer {
-  background-color: $grey-900;
-  color: white;
-  padding: 20px;
-  min-height: 200px;
+    background-color: $grey-900;
+    color: white;
+    padding: 20px;
+    min-height: 200px;
 
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
 }
