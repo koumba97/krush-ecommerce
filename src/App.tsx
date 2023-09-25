@@ -2,9 +2,8 @@ import { useState } from 'react'
 import './App.scss'
 import NavBar from './components/NavBar/NavBar.tsx'
 import Footer from './components/Footer/Footer.tsx'
-import { CategoryContainer } from './components/CategoryContainer/CategoryContainer.tsx'
 import { CategoriesData } from './data/CategoriesData.ts'
-import PromoBar from './components/PromoBar/PromoBar.tsx'
+import Header from './components/Header/Header.tsx'
 import CategoryPreview from './components/CategoryPreview/CategoryPreview.tsx'
 import { Category } from './types/Category.ts'
 
@@ -20,7 +19,7 @@ const App = () => {
             <NavBar />
 
             <div className="page-content">
-                <PromoBar />
+                <Header />
                 <CategoryPreview
                     currentCategory={currentCategory}
                     categoryList={CategoriesData}

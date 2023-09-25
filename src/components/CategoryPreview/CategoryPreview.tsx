@@ -1,5 +1,4 @@
 import { ArticlesData } from '../../data/ArticlesData'
-import { CategoriesData } from '../../data/CategoriesData'
 import { Category } from '../../types/Category'
 import { Article } from '../Article/Article'
 import CategoryList from '../CategoryList/CategoryList'
@@ -23,7 +22,7 @@ const CategoryPreview = ({ currentCategory, categoryList, changeCategory }: IPro
             <div className="preview-side">
                 <CategoryList currentCategory={currentCategory} list={categoryList} changeCategory={changeCategory} />
                 <div className={`article-container  ${newCategory == currentCategory.id ? 'transition' : ''}`}>
-                    {[...Array(6)].map((x, i) => (
+                    {[...Array(6)].map((_x, i) => (
                         <Article key={`article-${i}`} article={ArticlesData[i]} />
                     ))}
                 </div>

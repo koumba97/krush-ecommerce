@@ -1,4 +1,3 @@
-import { faL } from '@fortawesome/free-solid-svg-icons'
 import { Article as ArticleType } from '../../types/Article'
 import { LikeButton } from '../LikeButton/LikeButton'
 import './Article.scss'
@@ -20,9 +19,7 @@ export const Article = ({ article }: IProps) => {
                 onMouseLeave={() => setImageCover(article.images[0])}
             >
                 <LikeButton isLiked={false} />
-                {article.bestseller ? (
-                    <div className="bestseller-label">Bestseller</div>
-                ) : null}
+                {article.bestseller ? <div className="bestseller-label">Bestseller</div> : null}
             </div>
             <div className="article-details-container">
                 <h3 className="article-name">{article.name}</h3>

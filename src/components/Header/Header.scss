@@ -1,0 +1,26 @@
+@import '../../variables.scss';
+
+.header-container {
+    margin-bottom: 80px;
+    padding: 20px;
+    background-image: url('../../assets/images/pink-bolt-illustration.svg');
+    background-color: $grey-100;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 262px;
+    display: flex;
+    border-radius: 20px;
+
+    .catching-phrase {
+        font-size: 56px;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-style: italic;
+        max-width: 500px;
+        text-align: left;
+        margin: 0;
+        color: white;
+        text-shadow: 3px 3px 0px black;
+    }
+}

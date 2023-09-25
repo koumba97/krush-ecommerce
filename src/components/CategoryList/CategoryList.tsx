@@ -8,7 +8,7 @@ interface IProp {
     changeCategory: Function
 }
 const CategoryList = ({ currentCategory, list, changeCategory }: IProp) => {
-    const [newCategory, setNewCategory] = useState(currentCategory.id)
+    const [_newCategory, setNewCategory] = useState(currentCategory.id)
 
     useEffect(() => {
         setNewCategory(currentCategory.id)
