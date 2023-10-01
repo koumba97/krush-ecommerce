@@ -20,6 +20,10 @@ nav {
         width: max-content;
         justify-content: flex-end;
 
+        #search-link {
+            display: none;
+        }
+
         .nav-link {
             border-radius: 100%;
             width: 40px;
@@ -42,6 +46,55 @@ nav {
             }
             &:active {
                 transform: scale(0.9);
+            }
+        }
+    }
+
+    @media (min-width: $sm-breakpoint) and (max-width: $md-breakpoint) {
+        padding: 10px 20px;
+        .krush-logo {
+            flex: unset;
+        }
+
+        .search-bar {
+            display: none;
+        }
+
+        .links-container {
+            #search-link {
+                display: flex;
+            }
+        }
+    }
+
+    @media (min-width: 1px) and (max-width: $sm-breakpoint) {
+        padding: 10px 10px;
+        width: max-content;
+        width: calc(100% - 10px * 2);
+        .krush-logo {
+            img {
+                height: 12px;
+                width: 12px;
+            }
+            .logo-text {
+                font-size: 12px;
+            }
+        }
+
+        .search-bar {
+            display: none;
+        }
+        .links-container {
+            gap: 4px;
+            #search-link {
+                display: flex;
+            }
+            .nav-link {
+                height: 16px;
+                width: 16px;
+                i {
+                    font-size: 16px;
+                }
             }
         }
     }

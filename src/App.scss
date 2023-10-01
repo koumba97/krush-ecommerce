@@ -1,8 +1,17 @@
+@import './variables.scss';
 .page-content {
     max-width: 1280px;
     margin: auto auto 80px auto;
     text-align: center;
     padding: 0 60px;
+
+    @media (min-width: $sm-breakpoint) and (max-width: $md-breakpoint) {
+        padding: 0 20px;
+    }
+
+    @media (min-width: 1px) and (max-width: $sm-breakpoint) {
+        padding: 0 10px;
+    }
 }
 
 .categories-container {
