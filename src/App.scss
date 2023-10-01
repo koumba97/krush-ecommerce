@@ -5,12 +5,8 @@
     text-align: center;
     padding: 0 60px;
 
-    @media (min-width: $sm-breakpoint) and (max-width: $md-breakpoint) {
+    @media (min-width: 1px) and (max-width: $md-breakpoint) {
         padding: 0 20px;
-    }
-
-    @media (min-width: 1px) and (max-width: $sm-breakpoint) {
-        padding: 0 10px;
     }
 }
 

@@ -68,18 +68,9 @@ nav {
     }
 
     @media (min-width: 1px) and (max-width: $sm-breakpoint) {
-        padding: 10px 10px;
+        padding: 10px 20px;
         width: max-content;
-        width: calc(100% - 10px * 2);
-        .krush-logo {
-            img {
-                height: 12px;
-                width: 12px;
-            }
-            .logo-text {
-                font-size: 12px;
-            }
-        }
+        width: calc(100% - 20px * 2);
 
         .search-bar {
             display: none;
@@ -90,10 +81,10 @@ nav {
                 display: flex;
             }
             .nav-link {
-                height: 16px;
-                width: 16px;
+                height: 24px;
+                width: 24px;
                 i {
-                    font-size: 16px;
+                    font-size: 24px;
                 }
             }
         }
