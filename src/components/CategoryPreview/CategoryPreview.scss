@@ -78,6 +78,13 @@
             }
         }
     }
+
+    @media (min-width: 1px) and (max-width: $sm-breakpoint) {
+        .preview-side {
+            width: calc(100vw - 20px * 2);
+            gap: 20px;
+        }
+    }
 }
 
 @keyframes fadeInAnimation {
