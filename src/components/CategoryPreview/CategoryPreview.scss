@@ -79,10 +79,20 @@
         }
     }
 
-    @media (min-width: 1px) and (max-width: $sm-breakpoint) {
+    @media (min-width: 1px) and (max-width: $md-breakpoint) {
         .preview-side {
             width: calc(100vw - 20px * 2);
             gap: 20px;
+
+            .article-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                flex: 1;
+                grid-template-rows: minmax(350px, 1fr) minmax(400px, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 12px;
+            }
         }
     }
 }

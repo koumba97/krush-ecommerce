@@ -54,4 +54,30 @@
             font-size: 16px;
         }
     }
+
+    @media (min-width: 1px) and (max-width: $md-breakpoint) {
+        width: 40vw;
+        height: 68vw;
+        .image-article {
+            border-radius: 8px;
+            margin-bottom: 4px;
+
+            .like-button {
+                width: 20px;
+                height: 20px;
+                i {
+                    font-size: 12px;
+                }
+            }
+        }
+        .article-details-container {
+            .article-name {
+                font-size: 16px;
+                line-height: 16px;
+            }
+            .article-price {
+                font-size: 12px;
+            }
+        }
+    }
 }

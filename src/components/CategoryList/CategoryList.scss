@@ -63,11 +63,24 @@
         flex-direction: row;
         flex-wrap: nowrap;
         overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
         .category-link {
             width: max-content;
             min-width: unset;
             padding: 0 10px;
+            height: 24px;
             gap: 8px;
+            p {
+                margin: auto;
+
+                font-size: 12px;
+                transition: 0.2s color;
+            }
+            i {
+                font-size: 16px;
+            }
 
             &:first-child {
                 margin-left: 20px;
