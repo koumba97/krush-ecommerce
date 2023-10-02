@@ -57,10 +57,12 @@
 
         .article-container {
             display: grid;
+            max-width: 990px;
+            grid-template-columns: repeat(3, 1fr);
             flex: 1;
-            grid-template-rows: minmax(350px, 1fr) minmax(400px, 1fr);
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 32px;
+            margin: 0 auto;
+            display: grid;
+            gap: 24px;
         }
     }
     .transition {
@@ -69,29 +71,38 @@
         animation-fill-mode: forwards;
     }
 
-    @media (min-width: 1px) and (max-width: $md-breakpoint) {
+    @media (min-width: $md-breakpoint) and (max-width: $lg-breakpoint) {
         .preview-side {
-            flex-direction: column;
-
             .article-container {
-                max-width: calc(100vw - 20px * 2);
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     }
 
-    @media (min-width: 1px) and (max-width: $md-breakpoint) {
+    @media (min-width: $sm-breakpoint) and (max-width: $md-breakpoint) {
         .preview-side {
             width: calc(100vw - 20px * 2);
             gap: 20px;
+            flex-direction: column;
 
             .article-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+    @media (min-width: 1px) and (max-width: $sm-breakpoint) {
+        .preview-side {
+            width: calc(100vw - 20px * 2);
+            gap: 20px;
+            flex-direction: column;
+            .article-container {
+                max-width: unset;
+                width: 100%;
                 display: flex;
-                flex-wrap: wrap;
                 justify-content: space-between;
-                flex: 1;
-                grid-template-rows: minmax(350px, 1fr) minmax(400px, 1fr);
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                gap: 12px;
+                flex-wrap: wrap;
+                gap: 3vw;
             }
         }
     }

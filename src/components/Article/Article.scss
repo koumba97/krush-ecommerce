@@ -1,9 +1,9 @@
 @import '../../variables.scss';
 
 .article {
-    height: 100%;
-    width: 100%;
-    aspect-ratio: 1;
+    height: 30vw;
+    max-width: 312px;
+    max-height: 445px;
     display: flex;
     flex-direction: column;
     .image-article {
@@ -55,9 +55,16 @@
         }
     }
 
+    @media (min-width: $md-breakpoint) and (max-width: $lg-breakpoint) {
+        height: 40vw;
+    }
+
     @media (min-width: 1px) and (max-width: $md-breakpoint) {
-        width: 42vw;
+        width: 44vw;
         height: 68vw;
+        @media (min-width: 1px) and (max-width: $sm-breakpoint) {
+            width: 42vw;
+        }
         .image-article {
             border-radius: 8px;
             margin-bottom: 4px;
