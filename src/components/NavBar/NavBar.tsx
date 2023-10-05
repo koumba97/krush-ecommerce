@@ -40,22 +40,11 @@ const NavBar = () => {
                 <p>{searchBarVisibility}</p>
             </nav>
 
-            {/* <ToggleSearchBar isOpen={searchBarVisibility} /> */}
-            <Modal isOpen={searchBarVisibility} closeModal={closeSearchBarModal}>
-                <h1>ok</h1>
+            <Modal isOpen={searchBarVisibility} closeModal={closeSearchBarModal} width="70vw">
+                <SearchBar />
             </Modal>
         </>
     )
 }
 
-interface ToggleSearchBarProp {
-    isOpen: boolean
-}
-const ToggleSearchBar = ({ isOpen }: ToggleSearchBarProp) => {
-    return (
-        <Modal isOpen={isOpen}>
-            <h1>ok</h1>
-        </Modal>
-    )
-}
 export default NavBar

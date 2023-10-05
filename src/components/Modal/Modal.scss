@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .modal {
     .modal-bg {
         position: fixed;
@@ -7,8 +9,30 @@
         left: 0;
         z-index: 10;
         background-color: rgba(0, 0, 0, 0.23);
+        display: flex;
         .modal-content {
             background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: auto;
+
+            .close-button {
+                background-color: transparent;
+                display: block;
+                border: none;
+                color: $grey-200;
+                transition: color 0.3s;
+                margin-left: auto;
+                margin-bottom: 20px;
+                i {
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+                &:hover {
+                    color: black;
+                }
+            }
         }
     }
 }
