@@ -2,18 +2,33 @@ import './NavBar.scss'
 import Logo from '../Logo/Logo'
 import SearchBar from '../SearchBar/SearchBar'
 import Modal from '../Modal/Modal'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false)
 
+    useEffect(() => {
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+
+    const MD_BREAKPOINT = 768
+
     const openSearchBarModal = () => {
         setSearchBarVisibility(true)
-        console.log(searchBarVisibility)
     }
 
     const closeSearchBarModal = () => {
         setSearchBarVisibility(false)
+    }
+
+    const handleResize = () => {
+        if (window.innerWidth > MD_BREAKPOINT) {
+            setSearchBarVisibility(false)
+        }
     }
 
     return (
@@ -37,7 +52,6 @@ const NavBar = () => {
                         <i className="las la-shopping-bag"></i>
                     </a>
                 </div>
-                <p>{searchBarVisibility}</p>
             </nav>
 
             <Modal isOpen={searchBarVisibility} closeModal={closeSearchBarModal} width="70vw">
