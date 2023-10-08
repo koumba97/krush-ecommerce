@@ -3,6 +3,7 @@ import Logo from '../Logo/Logo'
 import SearchBar from '../SearchBar/SearchBar'
 import Modal from '../Modal/Modal'
 import { useEffect, useState } from 'react'
+import { Outlet } from 'react-router-dom'
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false)
