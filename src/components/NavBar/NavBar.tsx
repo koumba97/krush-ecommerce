@@ -3,7 +3,7 @@ import Logo from '../Logo/Logo'
 import SearchBar from '../SearchBar/SearchBar'
 import Modal from '../Modal/Modal'
 import { useEffect, useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false)
@@ -35,15 +35,18 @@ const NavBar = () => {
     return (
         <>
             <nav>
-                <Logo />
+                <Link to="/">
+                    <Logo />
+                </Link>
                 <SearchBar />
                 <div className="links-container">
                     <a className="nav-link" id="search-link" onClick={() => openSearchBarModal()}>
                         <i className="las la-search"></i>
                     </a>
-                    <a className="nav-link" id="account-link">
+
+                    <Link to="/sign-in" className="nav-link" id="account-link">
                         <i className="lar la-user-circle"></i>
-                    </a>
+                    </Link>
 
                     <a className="nav-link" id="wishlist-link">
                         <i className="lar la-heart"></i>
