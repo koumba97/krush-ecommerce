@@ -11,17 +11,11 @@ interface IProp {
     changeCategory: Function
 }
 const CategoryPreview = ({ currentCategory, categoryList, changeCategory }: IProp) => {
-    const [newCategory, setNewCategory] = useState(currentCategory.id)
-
-    useEffect(() => {
-        setNewCategory(currentCategory.id)
-    }, [currentCategory])
-
     return (
         <section className="category-preview">
             <div className="preview-side">
                 <CategoryList currentCategory={currentCategory} list={categoryList} changeCategory={changeCategory} />
-                <div className={`article-container  ${newCategory == currentCategory.id ? 'transition' : ''}`}>
+                <div key={currentCategory.id} className="article-container transition">
                     {[...Array(6)].map((_x, i) => (
                         <Article key={`article-${i}`} article={ArticlesData[i]} />
                     ))}

@@ -1,6 +1,7 @@
 import { Category } from '../../types/Category'
 import './CategoryList.scss'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 interface IProp {
     currentCategory: Category
@@ -18,16 +19,15 @@ const CategoryList = ({ currentCategory, list, changeCategory }: IProp) => {
         <div className="category-list">
             {list.map((categoryItem) => {
                 return (
-                    <div
-                        key={`category-${categoryItem.name}`}
-                        className={`category-link ${currentCategory.id == categoryItem.id ? 'active' : ''}`}
-                        onClick={() => {
-                            changeCategory(categoryItem.id)
-                        }}
-                    >
-                        <p>{categoryItem.name}</p>
-                        <i className={categoryItem.iconClass} />
-                    </div>
+                    <Link to={`/category/${categoryItem.name}`}>
+                        <div
+                            key={`category-${categoryItem.name}`}
+                            className={`category-link ${currentCategory.id == categoryItem.id ? 'active' : ''}`}
+                        >
+                            <p>{categoryItem.name}</p>
+                            <i className={categoryItem.iconClass} />
+                        </div>
+                    </Link>
                 )
             })}
         </div>

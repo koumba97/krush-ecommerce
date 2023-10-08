@@ -5,6 +5,9 @@
     flex-direction: column;
     gap: 12px;
 
+    a {
+        text-decoration: none;
+    }
     .category-link {
         text-transform: uppercase;
         min-width: 200px;
@@ -25,6 +28,7 @@
             margin: auto;
             font-size: 16px;
             transition: 0.2s color;
+            color: $grey-800;
         }
 
         i {
@@ -34,12 +38,18 @@
         &:hover {
             color: $brand-color;
             background-color: #ffdce2;
+            p {
+                color: $brand-color;
+            }
         }
 
         &.active {
             color: white;
             cursor: default;
             background-color: $brand-color;
+            p {
+                color: white;
+            }
         }
     }
 
