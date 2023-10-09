@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './Home.scss';
-import Footer from '../Footer/Footer.tsx';
 import { CategoriesData } from '../../data/CategoriesData.ts';
 import Header from '../Header/Header.tsx';
 import CategoryPreview from '../CategoryPreview/CategoryPreview.tsx';

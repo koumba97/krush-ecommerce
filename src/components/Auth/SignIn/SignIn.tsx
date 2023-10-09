@@ -5,13 +5,13 @@ const SignIn = () => {
     const logGoogleUser = async () => {
         const { user } = await signInWithGooglePopup();
         console.log(user);
-        const _userDocRef = await createUserDocumentFromAuth(user);
+        await createUserDocumentFromAuth(user);
     };
 
     const logFacebookUser = async () => {
         const { user } = await signInWithFacebookPopup();
         console.log(user);
-        const _userDocRef = await createUserDocumentFromAuth(user);
+        await createUserDocumentFromAuth(user);
     };
     return (
         <div>

@@ -11,7 +11,7 @@ export const CategoryContainer = ({ category }: IProps) => {
         <div className="category-container">
             <div className="image-category" style={{ backgroundImage: `url(${category.imageUrl})` }}></div>
             <div className="category-body-container">
-                <h3 className="category-name">{category.name.toUpperCase()}</h3>
+                <h3 className="category-name">{category.name}</h3>
             </div>
         </div>
     );

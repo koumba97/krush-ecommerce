@@ -1,10 +1,11 @@
 import { Article } from '../types/Article';
+import { CategoryList } from '../types/CategoryList';
 
 export const ArticlesData: Article[] = [
     {
         id: 1,
         name: 'Zamioculcas',
-        category: 'plants',
+        category: CategoryList.plants,
         images: [
             'https://bergamotte.imgix.net/fu085rvfvyiukcdflo9kk3nr8nyf?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
             'https://bergamotte.imgix.net/brxui5n2zmlla6mdnw38ixr78o1p?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
@@ -19,7 +20,7 @@ export const ArticlesData: Article[] = [
     {
         id: 2,
         name: 'Anthurium',
-        category: 'plants',
+        category: CategoryList.plants,
         images: [
             'https://bergamotte.imgix.net/1l66nto9bui42u06eb0a3rna76pk?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
             'https://bergamotte.imgix.net/khq92wvhstgjd94vnea1gujdkwac?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
@@ -35,7 +36,7 @@ export const ArticlesData: Article[] = [
     {
         id: 3,
         name: 'Pachira',
-        category: 'plants',
+        category: CategoryList.plants,
         images: [
             'https://bergamotte.imgix.net/jl4g00cfnd59sbakuxczxqkr7ojz?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
             'https://bergamotte.imgix.net/t3v10kql4bf5t2ez5a1rhwznr47y?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
@@ -50,7 +51,7 @@ export const ArticlesData: Article[] = [
     {
         id: 4,
         name: 'Calamondin',
-        category: 'plants',
+        category: CategoryList.plants,
         images: [
             'https://bergamotte.imgix.net/pinwsfpdmu9ri96j9f8wdlukdqs8?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
             'https://bergamotte.imgix.net/19vb5142fvzsnqfvnza8v91sqe9p?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
@@ -67,7 +68,7 @@ export const ArticlesData: Article[] = [
     {
         id: 5,
         name: 'Cactus',
-        category: 'plants',
+        category: CategoryList.plants,
         images: [
             'https://bergamotte.imgix.net/l6myhpvtgp2fd3qe73ygphs8nnaa?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
             'https://bergamotte.imgix.net/9e2vva7179k84kaotsfdnov1q3s5?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
@@ -82,7 +83,7 @@ export const ArticlesData: Article[] = [
     {
         id: 6,
         name: 'Pilea',
-        category: 'plants',
+        category: CategoryList.plants,
         images: [
             'https://bergamotte.imgix.net/8ujxvcijvyzprhjnkyhd7g2je37v?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
             'https://bergamotte.imgix.net/9od79q12eu87eo6n98l98zx7kwx3?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',

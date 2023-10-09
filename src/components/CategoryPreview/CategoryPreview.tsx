@@ -3,7 +3,6 @@ import { Category } from '../../types/Category';
 import { Article } from '../Article/Article';
 import CategoryList from '../CategoryList/CategoryList';
 import './CategoryPreview.scss';
-import { useState, useEffect } from 'react';
 
 interface IProp {
     currentCategory: Category;

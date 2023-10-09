@@ -8,7 +8,7 @@ interface IProp {
     list: Category[];
     changeCategory: Function;
 }
-const CategoryList = ({ currentCategory, list, changeCategory }: IProp) => {
+const CategoryList = ({ currentCategory, list }: IProp) => {
     const [_newCategory, setNewCategory] = useState(currentCategory.id);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const CategoryList = ({ currentCategory, list, changeCategory }: IProp) => {
                 return (
                     <Link to={`/category/${categoryItem.name}`} key={`category-${categoryItem.name}`}>
                         <div className={`category-link ${currentCategory.id == categoryItem.id ? 'active' : ''}`}>
-                            <p>{categoryItem.name}</p>
+                            <p>{categoryItem.title}</p>
                             <i className={categoryItem.iconClass} />
                         </div>
                     </Link>

@@ -1,9 +1,10 @@
 import { Category } from '../types/Category';
+import { CategoryList } from '../types/CategoryList';
 
 export const CategoriesData: Category[] = [
     {
         id: 1,
-        name: 'plants',
+        name: CategoryList.plants,
         title: 'Plants',
         iconClass: 'las la-leaf',
         imageUrl:
@@ -11,7 +12,7 @@ export const CategoriesData: Category[] = [
     },
     {
         id: 2,
-        name: 'decoration',
+        name: CategoryList.decoration,
         title: 'Decoration',
         iconClass: 'las la-shapes',
         imageUrl:
@@ -20,7 +21,7 @@ export const CategoriesData: Category[] = [
 
     {
         id: 3,
-        name: 'furniture',
+        name: CategoryList.furniture,
         title: 'Furniture',
         iconClass: 'las la-couch',
         imageUrl:
@@ -29,7 +30,7 @@ export const CategoriesData: Category[] = [
 
     {
         id: 4,
-        name: 'kitchen',
+        name: CategoryList.kitchen,
         title: 'Table & Kitchen',
         iconClass: 'las la-utensils',
         imageUrl: 'https://i.pinimg.com/564x/f3/83/5e/f3835e7c4abff06d797ca07ddebaec8d.jpg',
@@ -37,28 +38,28 @@ export const CategoriesData: Category[] = [
     },
     {
         id: 5,
-        name: 'jewelry',
+        name: CategoryList.jewelry,
         title: 'Jewelry',
         iconClass: 'las la-gem',
         imageUrl: 'https://i.pinimg.com/564x/d7/20/c0/d720c04ad098c3dea92db2833f429d11.jpg',
     },
     {
         id: 6,
-        name: 'lamp',
+        name: CategoryList.lamp,
         title: 'Lamp',
         iconClass: 'lar la-lightbulb',
         imageUrl: 'https://www.clearhalo.com/cdn/shop/products/1911954.jpg?v=1628196646',
     },
     {
         id: 7,
-        name: 'poster',
+        name: CategoryList.poster,
         title: 'Poster',
         iconClass: 'las la-image',
         imageUrl: 'https://i.etsystatic.com/22333159/r/il/c057a7/3376545796/il_1588xN.3376545796_2ket.jpg',
     },
     {
         id: 8,
-        name: 'stationery',
+        name: CategoryList.stationery,
         title: 'Stationery',
         iconClass: 'las la-book',
         imageUrl: 'https://i.pinimg.com/originals/95/d7/26/95d7261547e049ad211b57f10a1574bf.jpg',
