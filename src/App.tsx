@@ -2,7 +2,7 @@ import NavBar from './components/NavBar/NavBar.tsx';
 import Footer from './components/Footer/Footer.tsx';
 import Home from './components/Home/Home.tsx';
 import { Routes, Route, Outlet } from 'react-router-dom';
-import SignIn from './components/Auth/SignIn/SignIn.tsx';
+import AuthView from './components/Auth/AuthView/AuthView.tsx';
 
 const AppTemplate = () => {
     return (
@@ -20,7 +20,7 @@ const App = () => {
                 <Route index element={<Home />} />
                 <Route path="/category/:categoryName" element={<Home />} />
 
-                <Route path="/sign-in" element={<SignIn />} />
+                <Route path="/auth" element={<AuthView />} />
             </Route>
         </Routes>
     );

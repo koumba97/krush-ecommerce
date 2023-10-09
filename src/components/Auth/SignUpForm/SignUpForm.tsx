@@ -46,7 +46,7 @@ const SignUpForm = () => {
     return (
         <div>
             <h1>Sign Up</h1>
-            <form onSubmit={() => {}}>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label>Username</label>
                     <input type="text" required onChange={handleChange} value={username} name="username" />
@@ -73,9 +73,7 @@ const SignUpForm = () => {
                     />
                 </div>
 
-                <button type="submit" onClick={handleSubmit}>
-                    Sign Up
-                </button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
     );
