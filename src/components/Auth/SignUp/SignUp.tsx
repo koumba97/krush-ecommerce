@@ -24,13 +24,23 @@ const SignUpForm = () => {
                 const resp = await createAuthUserWithEmailAndPassword(email, password);
                 if (resp) {
                     await createUserDocumentFromAuth(resp.user, { username });
+                    resetFormField();
                 }
             } catch (error: any) {
-                console.log(error.message);
+                if (error.code === 'auth/email-already-in-use') {
+                    alert('This email is already in use');
+                } else if (error.code === 'auth/weak-password') {
+                    alert('Password should be at least 6 characters');
+                }
+                console.log(error.code);
             }
         } else {
             alert("Passwords don't match");
         }
+    };
+
+    const resetFormField = () => {
+        setFormFields(defaultFormFields);
     };
 
     return (
