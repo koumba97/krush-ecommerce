@@ -1,36 +1,36 @@
-import './NavBar.scss'
-import Logo from '../Logo/Logo'
-import SearchBar from '../SearchBar/SearchBar'
-import Modal from '../Modal/Modal'
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import './NavBar.scss';
+import Logo from '../Logo/Logo';
+import SearchBar from '../SearchBar/SearchBar';
+import Modal from '../Modal/Modal';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
-    const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false)
+    const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false);
 
     useEffect(() => {
-        window.addEventListener('resize', handleResize)
+        window.addEventListener('resize', handleResize);
 
         return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
-    const MD_BREAKPOINT = 768
+    const MD_BREAKPOINT = 768;
 
     const openSearchBarModal = () => {
-        setSearchBarVisibility(true)
-    }
+        setSearchBarVisibility(true);
+    };
 
     const closeSearchBarModal = () => {
-        setSearchBarVisibility(false)
-    }
+        setSearchBarVisibility(false);
+    };
 
     const handleResize = () => {
         if (window.innerWidth > MD_BREAKPOINT) {
-            setSearchBarVisibility(false)
+            setSearchBarVisibility(false);
         }
-    }
+    };
 
     return (
         <>
@@ -62,7 +62,7 @@ const NavBar = () => {
                 <SearchBar />
             </Modal>
         </>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;

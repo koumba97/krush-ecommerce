@@ -1,14 +1,14 @@
-import { Article as ArticleType } from '../../types/Article'
-import { LikeButton } from '../LikeButton/LikeButton'
-import './Article.scss'
-import { useState } from 'react'
+import { Article as ArticleType } from '../../types/Article';
+import { LikeButton } from '../LikeButton/LikeButton';
+import './Article.scss';
+import { useState } from 'react';
 
 interface IProps {
-    article: ArticleType
+    article: ArticleType;
 }
 
 export const Article = ({ article }: IProps) => {
-    const [imageCover, setImageCover] = useState(article.images[0])
+    const [imageCover, setImageCover] = useState(article.images[0]);
 
     return (
         <div className="article">
@@ -28,5 +28,5 @@ export const Article = ({ article }: IProps) => {
                 </p>
             </div>
         </div>
-    )
-}
+    );
+};

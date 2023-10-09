@@ -1,4 +1,4 @@
-import './SearchBar.scss'
+import './SearchBar.scss';
 
 const SearchBar = () => {
     return (
@@ -6,7 +6,7 @@ const SearchBar = () => {
             <input type="text" placeholder="Search for items and brands" />
             <i className="las la-search"></i>
         </div>
-    )
-}
+    );
+};
 
-export default SearchBar
+export default SearchBar;

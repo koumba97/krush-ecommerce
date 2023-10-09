@@ -1,14 +1,14 @@
-import { ArticlesData } from '../../data/ArticlesData'
-import { Category } from '../../types/Category'
-import { Article } from '../Article/Article'
-import CategoryList from '../CategoryList/CategoryList'
-import './CategoryPreview.scss'
-import { useState, useEffect } from 'react'
+import { ArticlesData } from '../../data/ArticlesData';
+import { Category } from '../../types/Category';
+import { Article } from '../Article/Article';
+import CategoryList from '../CategoryList/CategoryList';
+import './CategoryPreview.scss';
+import { useState, useEffect } from 'react';
 
 interface IProp {
-    currentCategory: Category
-    categoryList: Category[]
-    changeCategory: Function
+    currentCategory: Category;
+    categoryList: Category[];
+    changeCategory: Function;
 }
 const CategoryPreview = ({ currentCategory, categoryList, changeCategory }: IProp) => {
     return (
@@ -22,7 +22,7 @@ const CategoryPreview = ({ currentCategory, categoryList, changeCategory }: IPro
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default CategoryPreview
+export default CategoryPreview;

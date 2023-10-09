@@ -1,4 +1,4 @@
-import './Footer.scss'
+import './Footer.scss';
 
 const Footer = () => {
     return (
@@ -7,7 +7,7 @@ const Footer = () => {
                 © 2023 <span className="logo">KRUSH.</span>
             </p>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

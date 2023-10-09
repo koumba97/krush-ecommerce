@@ -1,8 +1,8 @@
-import NavBar from './components/NavBar/NavBar.tsx'
-import Footer from './components/Footer/Footer.tsx'
-import Home from './components/Home/Home.tsx'
-import { Routes, Route, Outlet } from 'react-router-dom'
-import SignIn from './components/Auth/SignIn/SignIn.tsx'
+import NavBar from './components/NavBar/NavBar.tsx';
+import Footer from './components/Footer/Footer.tsx';
+import Home from './components/Home/Home.tsx';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import SignIn from './components/Auth/SignIn/SignIn.tsx';
 
 const AppTemplate = () => {
     return (
@@ -11,8 +11,8 @@ const AppTemplate = () => {
             <Outlet />
             <Footer />
         </div>
-    )
-}
+    );
+};
 const App = () => {
     return (
         <Routes>
@@ -23,7 +23,7 @@ const App = () => {
                 <Route path="/sign-in" element={<SignIn />} />
             </Route>
         </Routes>
-    )
-}
+    );
+};
 
-export default App
+export default App;

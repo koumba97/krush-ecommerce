@@ -30,7 +30,9 @@ nav {
             height: 40px;
             display: flex;
             background-color: transparent;
-            transition: background-color 0.3s linear, transform 0.3s linear;
+            transition:
+                background-color 0.3s linear,
+                transform 0.3s linear;
             cursor: pointer;
 
             i {
