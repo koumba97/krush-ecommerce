@@ -19,11 +19,13 @@ const CategoryList = ({ currentCategory, list }: IProp) => {
         <div className="category-list">
             {list.map((categoryItem) => {
                 return (
-                    <Link to={`/category/${categoryItem.name}`} key={`category-${categoryItem.name}`}>
-                        <div className={`category-link ${currentCategory.id == categoryItem.id ? 'active' : ''}`}>
-                            <p>{categoryItem.title}</p>
-                            <i className={categoryItem.iconClass} />
-                        </div>
+                    <Link
+                        className={`category-link ${currentCategory.id == categoryItem.id ? 'active' : ''}`}
+                        to={`/category/${categoryItem.name}`}
+                        key={`category-${categoryItem.name}`}
+                    >
+                        <p>{categoryItem.name}</p>
+                        <i className={categoryItem.iconClass} />
                     </Link>
                 );
             })}
