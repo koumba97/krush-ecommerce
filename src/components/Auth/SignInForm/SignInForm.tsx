@@ -6,6 +6,7 @@ import {
 } from '../../../utils/firebase/firebase';
 import { createUserDocumentFromAuth } from '../../../utils/firebase/firebase';
 import Input from '../../ui/Input/Input';
+import Form from '../../ui/Form/Form';
 
 const defaultFormFields = {
     email: '',
@@ -16,22 +17,23 @@ const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
 
-    const handleChange = (event: any) => {
-        const { name, value } = event.target;
-        setFormFields({ ...formFields, [name]: value });
+    const handleInputChange = (newValue: { name: string; value: string | number | undefined }) => {
+        // const { name, value } = event.target;
+        setFormFields({ ...formFields, [newValue.name]: newValue.value });
+        console.log(formFields);
     };
 
     const handleSubmit = async (event: Event) => {
-        event.preventDefault();
-        try {
-            const resp = await signInAuthUserWithEmailAndPassword(email, password);
-            console.log(resp);
-        } catch (error: any) {
-            if (error.code === 'auth/invalid-login-credentials') {
-                alert('Invalid login credentials');
-            }
-            console.log(error);
-        }
+        // event.preventDefault();
+        // try {
+        //     const resp = await signInAuthUserWithEmailAndPassword(email, password);
+        //     console.log(resp);
+        // } catch (error: any) {
+        //     if (error.code === 'auth/invalid-login-credentials') {
+        //         alert('Invalid login credentials');
+        //     }
+        //     console.log(error);
+        // }
     };
 
     const logGoogleUser = async () => {
@@ -46,20 +48,29 @@ const SignInForm = () => {
     return (
         <div>
             <h1>Sign In</h1>
-            <Input type="text" name="test" label="test" defaultValue="" required={false}></Input>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email</label>
-                    <input type="email" required onChange={handleChange} value={email} name="email" />
-                </div>
 
-                <div>
-                    <label>Password</label>
-                    <input type="password" required onChange={handleChange} value={password} name="password" />
-                </div>
+            <Form onSubmit={handleSubmit}>
+                <Input
+                    value={email}
+                    onChange={handleInputChange}
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    required={true}
+                ></Input>
+
+                <Input
+                    value={password}
+                    onChange={handleInputChange}
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required={true}
+                ></Input>
 
                 <button type="submit">Sign In</button>
-            </form>
+            </Form>
+
             <button onClick={logGoogleUser}>Sign in With Google</button>
             <button onClick={logFacebookUser}>Sign in With Facebook</button>
         </div>

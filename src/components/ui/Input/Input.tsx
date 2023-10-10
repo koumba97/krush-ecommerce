@@ -1,28 +1,42 @@
+import './Input.scss';
 import { useState } from 'react';
 
 interface IProps {
     type: 'text' | 'number' | 'password' | 'email';
-    label: string;
-    defaultValue: string | number;
+    label?: string;
+    defaultValue?: string | number;
+    value: string | number | undefined;
+    placeholder: string;
     required: boolean;
     name: string;
+    onChange?: Function;
 }
-const Input = ({ type, label, defaultValue, required, name }: IProps) => {
+const Input = ({ type, label, defaultValue, value, placeholder, required, name, onChange }: IProps) => {
     const [inputValue, setInputValue] = useState(defaultValue);
 
-    const value = inputValue;
     const handleChange = (event: any) => {
-        const { name, value } = event.target;
-        console.log(value);
-
+        const { value } = event.target;
         setInputValue(value);
+
+        if (onChange) {
+            onChange({ name: name, value: value });
+        }
     };
 
     return (
-        <>
-            <label>{label}</label>
-            <input type={type} onChange={handleChange} value={value} name={name} required={required}></input>
-        </>
+        <div className="input">
+            {label ? <label>{label}</label> : null}
+            <div className="input-container">
+                <input
+                    type={type}
+                    onChange={handleChange}
+                    value={value}
+                    name={name}
+                    placeholder={placeholder}
+                    required={required}
+                ></input>
+            </div>
+        </div>
     );
 };
 

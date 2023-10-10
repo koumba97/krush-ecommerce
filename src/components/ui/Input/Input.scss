@@ -1,2 +1,27 @@
+@import '../../../variables.scss';
+
 .input {
+    .input-container {
+        background-color: $grey-100;
+        border-radius: 8px;
+        padding: 4px 12px;
+        display: flex;
+        flex-direction: column;
+        &:focus-within {
+            outline-style: solid;
+            outline-width: 2px;
+            outline-color: $outline-color;
+            outline-offset: 1px;
+        }
+        input {
+            border: none;
+            height: 28px;
+            background-color: unset;
+            outline: unset;
+            font-size: 16px;
+            &::placeholder {
+                color: $grey-200;
+            }
+        }
+    }
 }

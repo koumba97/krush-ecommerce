@@ -22,7 +22,7 @@
     &:focus-within {
         outline-style: solid;
         outline-width: 2px;
-        outline-color: #53ace4;
+        outline-color: $outline-color;
         outline-offset: 1px;
     }
 
