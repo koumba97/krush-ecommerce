@@ -17,7 +17,7 @@ const SignUpForm = () => {
         setFormFields({ ...formFields, [name]: value });
     };
 
-    const handleSubmit = async (event: Event) => {
+    const handleSubmit = async (event: any) => {
         event.preventDefault();
         if (password === confirmPassword) {
             try {

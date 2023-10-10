@@ -9,10 +9,11 @@ interface IProps {
     placeholder: string;
     required: boolean;
     name: string;
+    icon?: string;
     onChange?: Function;
 }
-const Input = ({ type, label, defaultValue, value, placeholder, required, name, onChange }: IProps) => {
-    const [inputValue, setInputValue] = useState(defaultValue);
+const Input = ({ type, label, defaultValue, value, placeholder, required, name, icon, onChange }: IProps) => {
+    const [_inputValue, setInputValue] = useState(defaultValue);
 
     const handleChange = (event: any) => {
         const { value } = event.target;
@@ -26,7 +27,9 @@ const Input = ({ type, label, defaultValue, value, placeholder, required, name, 
     return (
         <div className="input">
             {label ? <label>{label}</label> : null}
+
             <div className="input-container">
+                {icon ? <i className={icon}></i> : null}
                 <input
                     type={type}
                     onChange={handleChange}

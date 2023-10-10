@@ -23,17 +23,17 @@ const SignInForm = () => {
         console.log(formFields);
     };
 
-    const handleSubmit = async (event: Event) => {
-        // event.preventDefault();
-        // try {
-        //     const resp = await signInAuthUserWithEmailAndPassword(email, password);
-        //     console.log(resp);
-        // } catch (error: any) {
-        //     if (error.code === 'auth/invalid-login-credentials') {
-        //         alert('Invalid login credentials');
-        //     }
-        //     console.log(error);
-        // }
+    const handleSubmit = async (event: any) => {
+        event.preventDefault();
+        try {
+            const resp = await signInAuthUserWithEmailAndPassword(email, password);
+            console.log(resp);
+        } catch (error: any) {
+            if (error.code === 'auth/invalid-login-credentials') {
+                alert('Invalid login credentials');
+            }
+            console.log(error);
+        }
     };
 
     const logGoogleUser = async () => {
@@ -57,6 +57,7 @@ const SignInForm = () => {
                     name="email"
                     placeholder="Email"
                     required={true}
+                    icon="las la-envelope"
                 ></Input>
 
                 <Input
@@ -66,6 +67,7 @@ const SignInForm = () => {
                     name="password"
                     placeholder="Password"
                     required={true}
+                    icon="las la-key"
                 ></Input>
 
                 <button type="submit">Sign In</button>

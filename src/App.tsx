@@ -1,6 +1,5 @@
 import Home from './components/Home/Home.tsx';
 import { Routes, Route } from 'react-router-dom';
-import AuthView from './components/Auth/AuthView/AuthView.tsx';
 import AppTemplate from './templates/AppTemplate/AppTemplate.tsx';
 import AuthTemplate from './templates/AuthTemplate/AuthTemplate.tsx';
 import SignInForm from './components/Auth/SignInForm/SignInForm.tsx';

@@ -6,16 +6,23 @@
         border-radius: 8px;
         padding: 4px 12px;
         display: flex;
-        flex-direction: column;
+        gap: 12px;
+        align-items: center;
         &:focus-within {
             outline-style: solid;
             outline-width: 2px;
             outline-color: $outline-color;
             outline-offset: 1px;
         }
+
+        i {
+            width: max-content;
+            font-size: 24px;
+            color: $grey-200;
+        }
         input {
             border: none;
-            height: 28px;
+            height: 36px;
             background-color: unset;
             outline: unset;
             font-size: 16px;
