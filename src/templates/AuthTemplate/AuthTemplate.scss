@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.auth-view {
+    background-color: $grey-100;
+    padding: 50px 30px;
+
+    .krush-logo {
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .auth-container {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        border-radius: 16px;
+        background-color: white;
+        margin: auto;
+
+        .links-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+                text-transform: uppercase;
+                font-size: 20px;
+                text-align: center;
+                width: 100%;
+                margin: auto;
+                border-bottom: solid 2px $grey-100;
+                color: $grey-200;
+                h4 {
+                    margin: 12px 0;
+                }
+
+                &.active {
+                    border-color: $brand-color;
+                    color: $grey-900;
+                }
+            }
+        }
+    }
+}

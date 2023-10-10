@@ -1,5 +1,5 @@
 import { Article as ArticleType } from '../../types/Article';
-import { LikeButton } from '../LikeButton/LikeButton';
+import { LikeButton } from '../ui/LikeButton/LikeButton';
 import './Article.scss';
 import { useState } from 'react';
 

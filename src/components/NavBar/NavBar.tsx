@@ -1,5 +1,5 @@
 import './NavBar.scss';
-import Logo from '../Logo/Logo';
+import Logo from '../ui/Logo/Logo';
 import SearchBar from '../SearchBar/SearchBar';
 import Modal from '../Modal/Modal';
 import { useEffect, useState } from 'react';
@@ -35,16 +35,15 @@ const NavBar = () => {
     return (
         <>
             <nav>
-                <Link to="/">
-                    <Logo />
-                </Link>
+                <Logo />
+
                 <SearchBar />
                 <div className="links-container">
                     <a className="nav-link" id="search-link" onClick={() => openSearchBarModal()}>
                         <i className="las la-search"></i>
                     </a>
 
-                    <Link to="/sign-in" className="nav-link" id="account-link">
+                    <Link to="/auth/login" className="nav-link" id="account-link">
                         <i className="lar la-user-circle"></i>
                     </Link>
 

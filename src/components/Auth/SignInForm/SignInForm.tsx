@@ -5,6 +5,7 @@ import {
     signInWithGooglePopup,
 } from '../../../utils/firebase/firebase';
 import { createUserDocumentFromAuth } from '../../../utils/firebase/firebase';
+import Input from '../../ui/Input/Input';
 
 const defaultFormFields = {
     email: '',
@@ -45,6 +46,7 @@ const SignInForm = () => {
     return (
         <div>
             <h1>Sign In</h1>
+            <Input type="text" name="test" label="test" defaultValue="" required={false}></Input>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Email</label>
