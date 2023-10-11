@@ -1,3 +1,4 @@
+import './SignInForm.scss';
 import { useState } from 'react';
 import {
     signInAuthUserWithEmailAndPassword,
@@ -7,6 +8,8 @@ import {
 import { createUserDocumentFromAuth } from '../../../utils/firebase/firebase';
 import Input from '../../ui/Input/Input';
 import Form from '../../ui/Form/Form';
+import Button from '../../ui/Button/Button';
+import { Link } from 'react-router-dom';
 
 const defaultFormFields = {
     email: '',
@@ -46,36 +49,38 @@ const SignInForm = () => {
         await createUserDocumentFromAuth(user, {});
     };
     return (
-        <div>
-            <h1>Sign In</h1>
+        <Form onSubmit={handleSubmit}>
+            <Input
+                value={email}
+                onChange={handleInputChange}
+                type="email"
+                name="email"
+                placeholder="Email"
+                required={true}
+                icon="las la-envelope"
+            ></Input>
 
-            <Form onSubmit={handleSubmit}>
-                <Input
-                    value={email}
-                    onChange={handleInputChange}
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    required={true}
-                    icon="las la-envelope"
-                ></Input>
+            <Input
+                value={password}
+                onChange={handleInputChange}
+                type="password"
+                name="password"
+                placeholder="Password"
+                required={true}
+                icon="las la-key"
+            ></Input>
 
-                <Input
-                    value={password}
-                    onChange={handleInputChange}
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    required={true}
-                    icon="las la-key"
-                ></Input>
+            <Button type="submit">Sign In</Button>
 
-                <button type="submit">Sign In</button>
-            </Form>
-
-            <button onClick={logGoogleUser}>Sign in With Google</button>
-            <button onClick={logFacebookUser}>Sign in With Facebook</button>
-        </div>
+            <Link to="" className="link-forgot-password">
+                Forgot password ?
+            </Link>
+            <div className="social-buttons-container">
+                <h3>Or sign in with...</h3>
+                <button onClick={logGoogleUser}>Sign in With Google</button>
+                <button onClick={logFacebookUser}>Sign in With Facebook</button>
+            </div>
+        </Form>
     );
 };
 

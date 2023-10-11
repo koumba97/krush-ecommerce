@@ -1,0 +1,17 @@
+@import '../../../variables.scss';
+
+.form {
+    .link-forgot-password {
+        text-align: center;
+        margin: auto;
+        color: $grey-400;
+    }
+
+    .social-buttons-container {
+        border-top: solid 1px $grey-100;
+        h3 {
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+}

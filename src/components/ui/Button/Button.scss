@@ -1,0 +1,45 @@
+@import '../../../variables.scss';
+
+.button {
+    padding: 4px 12px;
+    height: 46px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:focus {
+        outline-style: solid;
+        outline-width: 2px;
+        outline-color: $outline-color;
+        outline-offset: 1px;
+    }
+    &.primary {
+        background-color: $brand-color;
+        color: white;
+
+        &:hover {
+            background-color: mix(black, $brand-color, 10%);
+        }
+        &:active {
+            transform: scale(0.96);
+        }
+    }
+
+    &.secondary {
+        // secondary button style
+    }
+
+    &.success {
+        // success button style
+    }
+
+    &.warning {
+        // warning button style
+    }
+
+    &.danger {
+        // danger button style
+    }
+}
