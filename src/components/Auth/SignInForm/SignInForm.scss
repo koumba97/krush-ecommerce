@@ -10,17 +10,24 @@
         color: $grey-400;
     }
 
+    h3 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
     .social-buttons-container {
-        border-top: solid 1px $grey-100;
-        h3 {
-            text-transform: uppercase;
-            text-align: center;
-        }
         .buttons {
             width: max-content;
             margin: auto;
             display: flex;
             gap: 20px;
+        }
+        &.border-top {
+            border-top: solid 1px $grey-100;
+        }
+        &.border-bottom {
+            border-bottom: solid 1px $grey-100;
+            padding-bottom: 20px;
         }
     }
 }

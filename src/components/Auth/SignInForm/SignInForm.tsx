@@ -18,7 +18,6 @@ const SignInForm = () => {
 
     const handleInputChange = (newValue: { name: string; value: string | number | undefined }) => {
         setFormFields({ ...formFields, [newValue.name]: newValue.value });
-        console.log(formFields);
     };
 
     const handleSubmit = async (event: any) => {
@@ -62,7 +61,7 @@ const SignInForm = () => {
             <Link to="" className="link-forgot-password">
                 Forgot password ?
             </Link>
-            <div className="social-buttons-container">
+            <div className="social-buttons-container border-top">
                 <h3>Or sign in with...</h3>
                 <div className="buttons">
                     <SocialMediaButton socialMedia="google"></SocialMediaButton>

@@ -1,7 +1,6 @@
 @import '../../variables.scss';
 
 .auth-view {
-    //background-color: $grey-100;
     padding: 50px 0;
     min-height: calc(100vh - 50px * 2);
 
@@ -12,7 +11,7 @@
     .auth-container {
         width: calc(100% - 20px * 4);
         max-width: 600px;
-        padding: 20px;
+        padding: 20px 20px 40px 20px;
         margin: 0 20px;
         border-radius: 16px;
         background-color: white;

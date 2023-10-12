@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../../utils/firebase/firebase';
+import Form from '../../ui/Form/Form';
+import Input from '../../ui/Input/Input';
+import Button from '../../ui/Button/Button';
+import SocialMediaButton from '../../ui/SocialMediaButton/SocialMediaButton';
 
 const defaultFormFields = {
     username: '',
@@ -12,9 +16,9 @@ const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { username, email, password, confirmPassword } = formFields;
 
-    const handleChange = (event: any) => {
-        const { name, value } = event.target;
-        setFormFields({ ...formFields, [name]: value });
+    const handleInputChange = (newValue: { name: string; value: string | number | undefined }) => {
+        setFormFields({ ...formFields, [newValue.name]: newValue.value });
+        console.log(formFields);
     };
 
     const handleSubmit = async (event: any) => {
@@ -44,38 +48,57 @@ const SignUpForm = () => {
     };
 
     return (
-        <div>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Username</label>
-                    <input type="text" required onChange={handleChange} value={username} name="username" />
+        <Form onSubmit={handleSubmit}>
+            <div className="social-buttons-container border-bottom">
+                <h3>Sign up with...</h3>
+                <div className="buttons">
+                    <SocialMediaButton socialMedia="google"></SocialMediaButton>
+                    <SocialMediaButton socialMedia="facebook"></SocialMediaButton>
                 </div>
+            </div>
+            <h3>Or sign up with email</h3>
+            <Input
+                value={username}
+                onChange={handleInputChange}
+                type="text"
+                name="username"
+                placeholder="Username"
+                required={true}
+                icon="las la-at"
+            ></Input>
 
-                <div>
-                    <label>Email</label>
-                    <input type="email" required onChange={handleChange} value={email} name="email" />
-                </div>
+            <Input
+                value={email}
+                onChange={handleInputChange}
+                type="email"
+                name="email"
+                placeholder="Email"
+                required={true}
+                icon="las la-envelope"
+            ></Input>
 
-                <div>
-                    <label>Password</label>
-                    <input type="password" required onChange={handleChange} value={password} name="password" />
-                </div>
+            <Input
+                value={password}
+                onChange={handleInputChange}
+                type="password"
+                name="password"
+                placeholder="Password"
+                required={true}
+                icon="las la-key"
+            ></Input>
 
-                <div>
-                    <label>Confirm Password</label>
-                    <input
-                        type="password"
-                        required
-                        onChange={handleChange}
-                        value={confirmPassword}
-                        name="confirmPassword"
-                    />
-                </div>
+            <Input
+                value={confirmPassword}
+                onChange={handleInputChange}
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm password"
+                required={true}
+                icon="las la-key"
+            ></Input>
 
-                <button type="submit">Sign Up</button>
-            </form>
-        </div>
+            <Button type="submit">Sign Up</Button>
+        </Form>
     );
 };
 
