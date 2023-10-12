@@ -21,7 +21,7 @@ const SignInForm = () => {
     };
 
     const handleSubmit = async (event: any) => {
-        //event.preventDefault();
+        event.preventDefault();
         try {
             const resp = await signInAuthUserWithEmailAndPassword(email, password);
             console.log(resp);
