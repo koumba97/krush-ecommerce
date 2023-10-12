@@ -7,8 +7,6 @@ interface IProps {
 const Form = ({ children, onSubmit }: IProps) => {
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        console.log('okok');
-
         onSubmit();
     };
 

@@ -1,11 +1,6 @@
 import './SignInForm.scss';
 import { useState } from 'react';
-import {
-    signInAuthUserWithEmailAndPassword,
-    signInWithFacebookPopup,
-    signInWithGooglePopup,
-} from '../../../utils/firebase/firebase';
-import { createUserDocumentFromAuth } from '../../../utils/firebase/firebase';
+import { signInAuthUserWithEmailAndPassword } from '../../../utils/firebase/firebase';
 import Input from '../../ui/Input/Input';
 import Form from '../../ui/Form/Form';
 import Button from '../../ui/Button/Button';
@@ -22,13 +17,12 @@ const SignInForm = () => {
     const { email, password } = formFields;
 
     const handleInputChange = (newValue: { name: string; value: string | number | undefined }) => {
-        // const { name, value } = event.target;
         setFormFields({ ...formFields, [newValue.name]: newValue.value });
         console.log(formFields);
     };
 
     const handleSubmit = async (event: any) => {
-        event.preventDefault();
+        //event.preventDefault();
         try {
             const resp = await signInAuthUserWithEmailAndPassword(email, password);
             console.log(resp);
@@ -40,17 +34,9 @@ const SignInForm = () => {
         }
     };
 
-    const logGoogleUser = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user, {});
-    };
-
-    const logFacebookUser = async () => {
-        const { user } = await signInWithFacebookPopup();
-        await createUserDocumentFromAuth(user, {});
-    };
     return (
         <Form onSubmit={handleSubmit}>
+            <h2>Welcome back! 👋</h2>
             <Input
                 value={email}
                 onChange={handleInputChange}
@@ -79,8 +65,8 @@ const SignInForm = () => {
             <div className="social-buttons-container">
                 <h3>Or sign in with...</h3>
                 <div className="buttons">
-                    <SocialMediaButton socialMedia="google" onClick={logGoogleUser}></SocialMediaButton>
-                    <SocialMediaButton socialMedia="facebook" onClick={logFacebookUser}></SocialMediaButton>
+                    <SocialMediaButton socialMedia="google"></SocialMediaButton>
+                    <SocialMediaButton socialMedia="facebook"></SocialMediaButton>
                 </div>
             </div>
         </Form>

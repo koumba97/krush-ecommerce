@@ -26,6 +26,7 @@
             background-color: unset;
             outline: unset;
             font-size: 16px;
+            width: 100%;
             &::placeholder {
                 color: $grey-200;
             }

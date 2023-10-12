@@ -1,6 +1,9 @@
 @import '../../../variables.scss';
 
 .form {
+    h2 {
+        text-align: center;
+    }
     .link-forgot-password {
         text-align: center;
         margin: auto;

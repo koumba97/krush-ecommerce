@@ -1,20 +1,23 @@
 @import '../../variables.scss';
 
 .auth-view {
-    background-color: $grey-100;
+    //background-color: $grey-100;
     padding: 50px 0;
-    min-height: 100vh;
+    min-height: calc(100vh - 50px * 2);
 
     .krush-logo {
         margin: auto;
         margin-bottom: 30px;
     }
     .auth-container {
-        width: 100%;
+        width: calc(100% - 20px * 4);
         max-width: 600px;
         padding: 20px;
+        margin: 0 20px;
         border-radius: 16px;
         background-color: white;
+        box-shadow: 5px 5px 20px lighten($grey-200, 15%);
+
         margin: auto;
 
         .links-container {
@@ -43,7 +46,8 @@
         }
 
         .form {
-            width: 400px;
+            max-width: 400px;
+            width: 100%;
             margin: auto;
         }
     }
