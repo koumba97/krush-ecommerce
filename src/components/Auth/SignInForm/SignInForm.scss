@@ -13,5 +13,11 @@
             text-transform: uppercase;
             text-align: center;
         }
+        .buttons {
+            width: max-content;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+        }
     }
 }

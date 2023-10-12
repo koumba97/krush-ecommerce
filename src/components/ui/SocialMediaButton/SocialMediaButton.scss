@@ -1,0 +1,19 @@
+@import '../../../variables.scss';
+
+.social-media-button {
+    border-radius: 100px;
+    border: none;
+    box-shadow: 1px 1px 5px $grey-200;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s transform 0.3s;
+
+    &:hover {
+        background-color: $grey-100;
+    }
+    &:active {
+        transform: scale(0.9);
+    }
+}

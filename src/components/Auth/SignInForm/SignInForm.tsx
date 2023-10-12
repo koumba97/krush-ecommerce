@@ -10,6 +10,7 @@ import Input from '../../ui/Input/Input';
 import Form from '../../ui/Form/Form';
 import Button from '../../ui/Button/Button';
 import { Link } from 'react-router-dom';
+import SocialMediaButton from '../../ui/SocialMediaButton/SocialMediaButton';
 
 const defaultFormFields = {
     email: '',
@@ -77,8 +78,10 @@ const SignInForm = () => {
             </Link>
             <div className="social-buttons-container">
                 <h3>Or sign in with...</h3>
-                <button onClick={logGoogleUser}>Sign in With Google</button>
-                <button onClick={logFacebookUser}>Sign in With Facebook</button>
+                <div className="buttons">
+                    <SocialMediaButton socialMedia="google" onClick={logGoogleUser}></SocialMediaButton>
+                    <SocialMediaButton socialMedia="facebook" onClick={logFacebookUser}></SocialMediaButton>
+                </div>
             </div>
         </Form>
     );
