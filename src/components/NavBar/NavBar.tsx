@@ -2,11 +2,15 @@ import './NavBar.scss';
 import Logo from '../ui/Logo/Logo';
 import SearchBar from '../SearchBar/SearchBar';
 import Modal from '../Modal/Modal';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../contexts/UserContext';
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false);
+    const { currentUser } = useContext(UserContext);
+
+    console.log(currentUser);
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -54,6 +58,8 @@ const NavBar = () => {
                     <a className="nav-link" id="cart-link">
                         <i className="las la-shopping-bag"></i>
                     </a>
+
+                    {currentUser ? 'user logged' : null}
                 </div>
             </nav>
 

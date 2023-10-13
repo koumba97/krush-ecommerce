@@ -6,6 +6,8 @@ import {
     signInWithFacebookPopup,
     signInWithGooglePopup,
 } from '../../../utils/firebase/firebase';
+import { UserContext } from '../../../contexts/UserContext';
+import { useContext } from 'react';
 
 type SocialMedia = 'facebook' | 'google';
 interface IProp {
@@ -14,14 +16,18 @@ interface IProp {
     size?: number;
 }
 const SocialMediaButton = ({ socialMedia = 'facebook', onClick, size = 30 }: IProp) => {
+    const { setCurrentUser } = useContext(UserContext);
+
     const logUser = async () => {
         if (socialMedia === 'facebook') {
             const resp = await signInWithFacebookPopup();
             await createUserDocumentFromAuth(resp.user, {});
+            setCurrentUser(resp.user);
             console.log(resp);
         } else if (socialMedia === 'google') {
             const resp = await signInWithGooglePopup();
             await createUserDocumentFromAuth(resp.user, {});
+            setCurrentUser(resp.user);
             console.log(resp);
         } else if (onClick) {
             onClick();
