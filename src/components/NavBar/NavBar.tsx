@@ -46,7 +46,7 @@ const NavBar = () => {
                         <i className="las la-search"></i>
                     </a>
 
-                    <Link to="/auth/login" className="nav-link" id="account-link">
+                    <Link to={currentUser ? '/profile' : '/auth/login'} className="nav-link" id="account-link">
                         <i className="lar la-user-circle"></i>
                     </Link>
 
