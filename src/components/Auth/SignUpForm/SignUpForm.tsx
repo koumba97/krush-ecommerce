@@ -1,13 +1,12 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../../utils/firebase/firebase';
 import Form from '../../ui/Form/Form';
 import Input from '../../ui/Input/Input';
 import Button from '../../ui/Button/Button';
 import SocialMediaButton from '../../ui/SocialMediaButton/SocialMediaButton';
-import { UserContext } from '../../../contexts/UserContext';
 
 const defaultFormFields = {
-    username: '',
+    displayName: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -15,9 +14,7 @@ const defaultFormFields = {
 
 const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
-    const { username, email, password, confirmPassword } = formFields;
-
-    const { setCurrentUser } = useContext(UserContext);
+    const { displayName, email, password, confirmPassword } = formFields;
 
     const handleInputChange = (newValue: { name: string; value: string | number | undefined }) => {
         setFormFields({ ...formFields, [newValue.name]: newValue.value });
@@ -29,8 +26,7 @@ const SignUpForm = () => {
             try {
                 const resp = await createAuthUserWithEmailAndPassword(email, password);
                 if (resp) {
-                    await createUserDocumentFromAuth(resp.user, { username });
-                    setCurrentUser(resp.user);
+                    await createUserDocumentFromAuth(resp.user, { displayName });
                     resetFormField();
                 }
             } catch (error: any) {
@@ -61,13 +57,13 @@ const SignUpForm = () => {
             </div>
             <h3>Or sign up with email</h3>
             <Input
-                value={username}
+                value={displayName}
                 onChange={handleInputChange}
                 type="text"
-                name="username"
-                placeholder="Username"
+                name="displayName"
+                placeholder="Display name"
                 required={true}
-                icon="las la-at"
+                icon="las la-user"
             ></Input>
 
             <Input

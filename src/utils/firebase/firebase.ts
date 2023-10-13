@@ -7,6 +7,8 @@ import {
     FacebookAuthProvider,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
@@ -47,12 +49,12 @@ export const createUserDocumentFromAuth = async (userAuth: any, additionalInform
     const userSnapshot = await getDoc(userDocRef);
 
     if (!userSnapshot.exists()) {
-        const { username, email } = userAuth;
+        const { displayName, email } = userAuth;
         const createdAt = new Date();
 
         try {
             await setDoc(userDocRef, {
-                username,
+                displayName,
                 email,
                 createdAt,
                 ...additionalInformation,
@@ -61,7 +63,6 @@ export const createUserDocumentFromAuth = async (userAuth: any, additionalInform
             console.error('Error creating the user', error.message);
         }
     }
-    console.log(userSnapshot);
 };
 
 export const createAuthUserWithEmailAndPassword = async (email: string, password: string) => {
@@ -72,4 +73,12 @@ export const createAuthUserWithEmailAndPassword = async (email: string, password
 export const signInAuthUserWithEmailAndPassword = async (email: string, password: string) => {
     if (!email || !password) return;
     return await signInWithEmailAndPassword(auth, email, password);
+};
+
+export const signOutUser = async () => {
+    await signOut(auth);
+};
+
+export const onAuthStateChangedListner = (callback: any) => {
+    onAuthStateChanged(auth, callback);
 };

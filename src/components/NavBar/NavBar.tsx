@@ -5,12 +5,11 @@ import Modal from '../Modal/Modal';
 import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
+import { signOutUser } from '../../utils/firebase/firebase';
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false);
     const { currentUser } = useContext(UserContext);
-
-    console.log(currentUser);
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -59,7 +58,7 @@ const NavBar = () => {
                         <i className="las la-shopping-bag"></i>
                     </a>
 
-                    {currentUser ? 'user logged' : null}
+                    {currentUser ? <div onClick={() => signOutUser()}>Log out</div> : null}
                 </div>
             </nav>
 

@@ -1,12 +1,11 @@
 import './SignInForm.scss';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { signInAuthUserWithEmailAndPassword } from '../../../utils/firebase/firebase';
 import Input from '../../ui/Input/Input';
 import Form from '../../ui/Form/Form';
 import Button from '../../ui/Button/Button';
 import { Link } from 'react-router-dom';
 import SocialMediaButton from '../../ui/SocialMediaButton/SocialMediaButton';
-import { UserContext } from '../../../contexts/UserContext';
 
 const defaultFormFields = {
     email: '',
@@ -17,8 +16,6 @@ const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password } = formFields;
 
-    const { setCurrentUser } = useContext(UserContext);
-
     const handleInputChange = (newValue: { name: string; value: string | number | undefined }) => {
         setFormFields({ ...formFields, [newValue.name]: newValue.value });
     };
@@ -27,7 +24,6 @@ const SignInForm = () => {
         try {
             const resp = await signInAuthUserWithEmailAndPassword(email, password);
             if (resp) {
-                setCurrentUser(resp.user);
                 console.log(resp);
             }
         } catch (error: any) {
