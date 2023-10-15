@@ -1,7 +1,7 @@
 import { CategoryList } from './CategoryList';
 import { Price } from './Price';
 
-export interface Article {
+export interface Product {
     id: number;
     category: CategoryList;
     name: string;

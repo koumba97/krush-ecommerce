@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './Home.scss';
 import { CategoriesData } from '../../data/CategoriesData.ts';
 import Header from '../Header/Header.tsx';
-import CategoryPreview from '../CategoryPreview/CategoryPreview.tsx';
+import Shop from '../Shop/Shop.tsx';
 import { Category } from '../../types/Category.ts';
 import { useParams } from 'react-router-dom';
 import { CategoryList } from '../../types/CategoryList.ts';
@@ -35,7 +35,7 @@ const Home = () => {
     return (
         <div className="page-content">
             <Header />
-            <CategoryPreview
+            <Shop
                 currentCategory={currentCategory}
                 categoryList={CategoriesData}
                 changeCategory={changeCategoryHandler}

@@ -1,22 +1,22 @@
-import { ArticlesData } from '../../data/ArticlesData';
+import { ProductsData } from '../../data/ProductsData';
 import { Category } from '../../types/Category';
-import { Article } from '../Article/Article';
+import { Product } from '../Product/Product';
 import CategoryList from '../CategoryList/CategoryList';
-import './CategoryPreview.scss';
+import './Shop.scss';
 
 interface IProp {
     currentCategory: Category;
     categoryList: Category[];
     changeCategory: Function;
 }
-const CategoryPreview = ({ currentCategory, categoryList, changeCategory }: IProp) => {
+const Shop = ({ currentCategory, categoryList, changeCategory }: IProp) => {
     return (
-        <section className="category-preview">
+        <section className="shop">
             <div className="preview-side">
                 <CategoryList currentCategory={currentCategory} list={categoryList} changeCategory={changeCategory} />
                 <div key={currentCategory.id} className="article-container transition">
                     {[...Array(6)].map((_x, i) => (
-                        <Article key={`article-${i}`} article={ArticlesData[i]} />
+                        <Product key={`article-${i}`} product={ProductsData[i]} />
                     ))}
                 </div>
             </div>
@@ -24,4 +24,4 @@ const CategoryPreview = ({ currentCategory, categoryList, changeCategory }: IPro
     );
 };
 
-export default CategoryPreview;
+export default Shop;

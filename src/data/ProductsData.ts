@@ -1,7 +1,7 @@
-import { Article } from '../types/Article';
+import { Product } from '../types/Product';
 import { CategoryList } from '../types/CategoryList';
 
-export const ArticlesData: Article[] = [
+export const ProductsData: Product[] = [
     {
         id: 1,
         name: 'Zamioculcas',
