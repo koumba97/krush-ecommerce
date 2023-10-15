@@ -6,7 +6,9 @@ const AppTemplate = () => {
     return (
         <div className="app">
             <NavBar />
-            <Outlet />
+            <div className="page-content">
+                <Outlet />
+            </div>
             <Footer />
         </div>
     );

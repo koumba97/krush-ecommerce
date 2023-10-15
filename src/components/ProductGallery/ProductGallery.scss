@@ -1,0 +1,29 @@
+@import '../../variables.scss';
+
+.product-gallery {
+    display: flex;
+    gap: 20px;
+    .active-slide {
+        width: 400px;
+        height: 400px;
+        background-color: $grey-100;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .slide-container {
+        width: 100px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .slide {
+            width: 100px;
+            height: 180px;
+            background-color: $grey-100;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}

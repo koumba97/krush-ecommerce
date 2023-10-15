@@ -33,14 +33,14 @@ const Home = () => {
     };
 
     return (
-        <div className="page-content">
+        <>
             <Header />
             <Shop
                 currentCategory={currentCategory}
                 categoryList={CategoriesData}
                 changeCategory={changeCategoryHandler}
             />
-        </div>
+        </>
     );
 };
 

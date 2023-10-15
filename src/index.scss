@@ -1,3 +1,4 @@
+@import './variables.scss';
 @import '@coreui/coreui/dist/css/coreui.min.css';
 
 @font-face {
@@ -50,6 +51,17 @@ body {
 
     margin: 0;
     display: flex;
+
+    .page-content {
+        max-width: 1280px;
+        margin: auto auto 80px auto;
+        text-align: center;
+        padding: 0 60px;
+
+        @media (min-width: 1px) and (max-width: $md-breakpoint) {
+            padding: 0 20px;
+        }
+    }
 
     a {
         text-decoration: none;
