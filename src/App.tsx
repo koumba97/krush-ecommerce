@@ -19,9 +19,9 @@ const App = () => {
             </Route>
 
             {currentUser ? null : (
-                <Route path="/auth" element={<AuthTemplate />}>
-                    <Route path="/auth/login" element={<SignInForm />} />
-                    <Route path="/auth/register" element={<SignUpForm />} />
+                <Route path="/" element={<AuthTemplate />}>
+                    <Route path="/login" element={<SignInForm />} />
+                    <Route path="/register" element={<SignUpForm />} />
                 </Route>
             )}
         </Routes>

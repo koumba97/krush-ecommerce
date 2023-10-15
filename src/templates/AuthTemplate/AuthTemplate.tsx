@@ -24,11 +24,11 @@ const AuthTemplate = () => {
             <Logo size={40} />
             <div className="auth-container">
                 <div className="links-container">
-                    <Link to="/auth/login" className={location.pathname === '/auth/login' ? 'active' : ''}>
+                    <Link to="/login" className={location.pathname === '/login' ? 'active' : ''}>
                         <h4>Sign In</h4>
                     </Link>
 
-                    <Link to="/auth/register" className={location.pathname === '/auth/register' ? 'active' : ''}>
+                    <Link to="/register" className={location.pathname === '/register' ? 'active' : ''}>
                         <h4>Register</h4>
                     </Link>
                 </div>

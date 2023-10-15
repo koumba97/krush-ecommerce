@@ -16,7 +16,6 @@ export const UserProvider = ({ children }: IProp) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChangedListener((user: any) => {
             setCurrentUser(user);
-            console.log(user);
         });
         return unsubscribe;
     }, []);

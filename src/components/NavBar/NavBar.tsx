@@ -3,10 +3,10 @@ import Logo from '../ui/Logo/Logo';
 import SearchBar from '../SearchBar/SearchBar';
 import Modal from '../Modal/Modal';
 import { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 import { signOutUser } from '../../utils/firebase/firebase';
 import { CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem } from '@coreui/react';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false);
@@ -59,8 +59,12 @@ const NavBar = () => {
                             </CDropdownMenu>
                         ) : (
                             <CDropdownMenu>
-                                <CDropdownItem href="/auth/register">Join</CDropdownItem>
-                                <CDropdownItem href="/auth/login">Sign in</CDropdownItem>
+                                <Link to="/register">
+                                    <CDropdownItem>Join</CDropdownItem>
+                                </Link>
+                                <Link to="/login">
+                                    <CDropdownItem>Sign in</CDropdownItem>
+                                </Link>
                             </CDropdownMenu>
                         )}
                     </CDropdown>
