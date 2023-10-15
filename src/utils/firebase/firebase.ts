@@ -41,7 +41,7 @@ export const signInWithFacebookPopup = () => signInWithPopup(auth, facebookProvi
 
 export const db = getFirestore();
 
-export const createUserDocumentFromAuth = async (userAuth: any, additionalInformation: any) => {
+export const createUserDocumentFromAuth = async (userAuth: any, additionalInformation?: any) => {
     if (!userAuth) return;
 
     const userDocRef = doc(db, 'users', userAuth.uid);
@@ -79,6 +79,6 @@ export const signOutUser = async () => {
     await signOut(auth);
 };
 
-export const onAuthStateChangedListner = (callback: any) => {
+export const onAuthStateChangedListener = (callback: any) => {
     onAuthStateChanged(auth, callback);
 };

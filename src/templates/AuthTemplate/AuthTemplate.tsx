@@ -1,5 +1,5 @@
 import './AuthTemplate.scss';
-import { Link, Outlet, redirect, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import Logo from '../../components/ui/Logo/Logo';
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../../contexts/UserContext';

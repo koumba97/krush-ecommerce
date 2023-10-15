@@ -1,9 +1,9 @@
 import { createContext, useState, useEffect } from 'react';
-import { onAuthStateChangedListner } from '../utils/firebase/firebase';
+import { onAuthStateChangedListener } from '../utils/firebase/firebase';
 
 export const UserContext = createContext({
     currentUser: null,
-    setCurrentUser: (user: Object | null) => null,
+    setCurrentUser: (_user: Object | null) => null,
 });
 
 interface IProp {
@@ -14,11 +14,12 @@ export const UserProvider = ({ children }: IProp) => {
     const value = { currentUser, setCurrentUser };
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChangedListner((user: any) => {
+        const unsubscribe = onAuthStateChangedListener((user: any) => {
             setCurrentUser(user);
             console.log(user);
         });
         return unsubscribe;
     }, []);
+    //@ts-ignore
     return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };

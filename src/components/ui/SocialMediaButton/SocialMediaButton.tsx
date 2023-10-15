@@ -6,8 +6,6 @@ import {
     signInWithFacebookPopup,
     signInWithGooglePopup,
 } from '../../../utils/firebase/firebase';
-import { UserContext } from '../../../contexts/UserContext';
-import { useContext } from 'react';
 
 type SocialMedia = 'facebook' | 'google';
 interface IProp {
