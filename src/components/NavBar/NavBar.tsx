@@ -5,7 +5,7 @@ import Modal from '../Modal/Modal';
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import { signOutUser } from '../../utils/firebase/firebase';
-import { CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem } from '@coreui/react';
+import { CDropdown, CDropdownToggle, CDropdownMenu } from '@coreui/react';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
@@ -54,16 +54,24 @@ const NavBar = () => {
 
                         {currentUser ? (
                             <CDropdownMenu>
-                                <CDropdownItem href="/profil">Profile</CDropdownItem>
-                                <CDropdownItem onClick={() => signOutUser()}>Log out</CDropdownItem>
+                                <Link to="/profile" className="dropdown-item">
+                                    <i className="las la-user dropdown-item-icon"></i>
+                                    <span>Profile</span>
+                                </Link>
+                                <div className="dropdown-item" onClick={() => signOutUser()}>
+                                    <i className="las la-sign-out-alt dropdown-item-icon"></i>
+                                    <span>Log out</span>
+                                </div>
                             </CDropdownMenu>
                         ) : (
                             <CDropdownMenu>
-                                <Link to="/register">
-                                    <CDropdownItem>Join</CDropdownItem>
+                                <Link to="/register" className="dropdown-item">
+                                    <i className="las la-user-plus dropdown-item-icon"></i>
+                                    <span>Join</span>
                                 </Link>
-                                <Link to="/login">
-                                    <CDropdownItem>Sign in</CDropdownItem>
+                                <Link to="/login" className="dropdown-item">
+                                    <i className="las la-sign-in-alt dropdown-item-icon"></i>
+                                    <span>Sign in</span>
                                 </Link>
                             </CDropdownMenu>
                         )}

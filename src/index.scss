@@ -56,4 +56,33 @@ body {
         color: unset;
         margin: 0;
     }
+
+    .dropdown-menu {
+        padding: 0;
+        li {
+            .dropdown-item {
+                //border: solid;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                cursor: pointer;
+
+                .dropdown-item-icon {
+                    font-size: 20px;
+                }
+            }
+
+            &:first-of-type {
+                .dropdown-item {
+                    border-radius: 6px 6px 0 0;
+                }
+            }
+            &:last-of-type {
+                .dropdown-item {
+                    border-radius: 0 0 6px 6px;
+                }
+            }
+        }
+    }
 }
