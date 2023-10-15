@@ -1,4 +1,5 @@
 import Home from './components/Home/Home.tsx';
+import Product from './components/Product/Product.tsx';
 import { Routes, Route } from 'react-router-dom';
 import AppTemplate from './templates/AppTemplate/AppTemplate.tsx';
 import AuthTemplate from './templates/AuthTemplate/AuthTemplate.tsx';
@@ -14,6 +15,7 @@ const App = () => {
             <Route path="/" element={<AppTemplate />}>
                 <Route index element={<Home />} />
                 <Route path="/category/:categoryName" element={<Home />} />
+                <Route path="/product/:productId" element={<Product />} />
             </Route>
 
             {currentUser ? null : (
