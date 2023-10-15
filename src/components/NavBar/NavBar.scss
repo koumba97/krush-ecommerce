@@ -44,6 +44,14 @@ nav {
                 transform: scale(0.9);
             }
         }
+        li {
+            list-style: none;
+            a {
+                &::after {
+                    content: none;
+                }
+            }
+        }
     }
 
     @media (min-width: $sm-breakpoint) and (max-width: $md-breakpoint) {

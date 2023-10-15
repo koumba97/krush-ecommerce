@@ -36,7 +36,7 @@ const SignInForm = () => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <h2>Welcome back! 👋</h2>
+            <h4>Welcome back! 👋</h4>
             <Input
                 value={email}
                 onChange={handleInputChange}
@@ -63,7 +63,7 @@ const SignInForm = () => {
                 Forgot password ?
             </Link>
             <div className="social-buttons-container border-top">
-                <h3>Or sign in with...</h3>
+                <h5>Or sign in with...</h5>
                 <div className="buttons">
                     <SocialMediaButton socialMedia="google"></SocialMediaButton>
                     <SocialMediaButton socialMedia="facebook"></SocialMediaButton>

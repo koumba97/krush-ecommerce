@@ -10,9 +10,22 @@
         color: $grey-400;
     }
 
-    h3 {
-        text-transform: uppercase;
+    h4 {
         text-align: center;
+        margin: 12px 0;
+        font-size: 20px;
+        color: $grey-800;
+        font-weight: 600;
+    }
+
+    h5 {
+        //text-transform: uppercase;
+        text-align: center;
+        margin: 12px 0;
+        //font-family: 'Lemon Milk';
+        font-size: 16px;
+        color: $grey-800;
+        font-weight: 600;
     }
 
     .social-buttons-container {

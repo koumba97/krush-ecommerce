@@ -49,13 +49,13 @@ const SignUpForm = () => {
     return (
         <Form onSubmit={handleSubmit}>
             <div className="social-buttons-container border-bottom">
-                <h3>Sign up with...</h3>
+                <h5>Sign up with...</h5>
                 <div className="buttons">
                     <SocialMediaButton socialMedia="google"></SocialMediaButton>
                     <SocialMediaButton socialMedia="facebook"></SocialMediaButton>
                 </div>
             </div>
-            <h3>Or sign up with email</h3>
+            <h5>Or sign up with email</h5>
             <Input
                 value={displayName}
                 onChange={handleInputChange}

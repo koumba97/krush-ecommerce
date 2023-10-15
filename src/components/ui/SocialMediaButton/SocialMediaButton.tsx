@@ -18,11 +18,17 @@ const SocialMediaButton = ({ socialMedia = 'facebook', onClick, size = 30 }: IPr
         if (socialMedia === 'facebook') {
             const resp = await signInWithFacebookPopup();
             await createUserDocumentFromAuth(resp.user, {});
-            console.log(resp);
+
+            if (resp.user) {
+                return (document.location.href = '/');
+            }
         } else if (socialMedia === 'google') {
             const resp = await signInWithGooglePopup();
             await createUserDocumentFromAuth(resp.user, {});
-            console.log(resp);
+
+            if (resp.user) {
+                return (document.location.href = '/');
+            }
         } else if (onClick) {
             onClick();
         }

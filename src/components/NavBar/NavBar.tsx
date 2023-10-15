@@ -6,6 +6,7 @@ import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 import { signOutUser } from '../../utils/firebase/firebase';
+import { CDropdown, CDropdownToggle, CDropdownMenu, CDropdownItem } from '@coreui/react';
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false);
@@ -46,9 +47,23 @@ const NavBar = () => {
                         <i className="las la-search"></i>
                     </a>
 
-                    <Link to={currentUser ? '/profile' : '/auth/login'} className="nav-link" id="account-link">
-                        <i className="lar la-user-circle"></i>
-                    </Link>
+                    <CDropdown variant="nav-item">
+                        <CDropdownToggle size="lg">
+                            <i className="lar la-user-circle"></i>
+                        </CDropdownToggle>
+
+                        {currentUser ? (
+                            <CDropdownMenu>
+                                <CDropdownItem href="/profil">Profile</CDropdownItem>
+                                <CDropdownItem onClick={() => signOutUser()}>Log out</CDropdownItem>
+                            </CDropdownMenu>
+                        ) : (
+                            <CDropdownMenu>
+                                <CDropdownItem href="/auth/register">Join</CDropdownItem>
+                                <CDropdownItem href="/auth/login">Sign in</CDropdownItem>
+                            </CDropdownMenu>
+                        )}
+                    </CDropdown>
 
                     <a className="nav-link" id="wishlist-link">
                         <i className="lar la-heart"></i>
@@ -57,8 +72,6 @@ const NavBar = () => {
                     <a className="nav-link" id="cart-link">
                         <i className="las la-shopping-bag"></i>
                     </a>
-
-                    {currentUser ? <div onClick={() => signOutUser()}>Log out</div> : null}
                 </div>
             </nav>
 
