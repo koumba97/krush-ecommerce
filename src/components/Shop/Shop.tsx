@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { ProductsContext } from '../../contexts/ProductsContext';
 import { Category } from '../../types/Category';
-import { Product } from '../Product/Product';
+import { ProductCard } from '../ProductCard/ProductCard';
 import CategoryList from '../CategoryList/CategoryList';
 import './Shop.scss';
 
@@ -18,7 +18,7 @@ const Shop = ({ currentCategory, categoryList, changeCategory }: IProp) => {
                 <CategoryList currentCategory={currentCategory} list={categoryList} changeCategory={changeCategory} />
                 <div key={currentCategory.id} className="article-container transition">
                     {products.map((product, i) => (
-                        <Product key={`article-${i}`} product={product} />
+                        <ProductCard key={`article-${i}`} product={product} />
                     ))}
                 </div>
             </div>

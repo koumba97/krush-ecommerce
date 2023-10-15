@@ -1,17 +1,17 @@
 import { Product as ProductType } from '../../types/Product';
 import { LikeButton } from '../ui/LikeButton/LikeButton';
-import './Product.scss';
+import './ProductCard.scss';
 import { useState } from 'react';
 
 interface IProps {
     product: ProductType;
 }
 
-export const Product = ({ product }: IProps) => {
+export const ProductCard = ({ product }: IProps) => {
     const [imageCover, setImageCover] = useState(product.images[0]);
 
     return (
-        <div className="article">
+        <div className="product-card">
             <div
                 className="image-article"
                 style={{ backgroundImage: `url(${imageCover})` }}

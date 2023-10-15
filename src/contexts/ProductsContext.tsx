@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState } from 'react';
 import { ProductsData } from '../data/ProductsData';
 import { Product } from '../types/Product';
 
@@ -11,7 +11,7 @@ interface IProp {
 }
 
 export const ProductsProvider = ({ children }: IProp) => {
-    const [products, setProducts] = useState(ProductsData);
+    const [products, _setProducts] = useState(ProductsData);
     const value = { products };
     return <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>;
 };
