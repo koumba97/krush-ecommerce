@@ -18,12 +18,10 @@ const App = () => {
                 <Route path="/product/:productId" element={<Product />} />
             </Route>
 
-            {currentUser ? null : (
-                <Route path="/" element={<AuthTemplate />}>
-                    <Route path="/login" element={<SignInForm />} />
-                    <Route path="/register" element={<SignUpForm />} />
-                </Route>
-            )}
+            <Route path="/" element={<AuthTemplate />}>
+                <Route path="/login" element={<SignInForm />} />
+                <Route path="/register" element={<SignUpForm />} />
+            </Route>
         </Routes>
     );
 };

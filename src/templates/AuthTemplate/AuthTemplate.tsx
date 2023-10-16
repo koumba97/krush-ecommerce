@@ -1,11 +1,12 @@
 import './AuthTemplate.scss';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, redirect, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../../components/ui/Logo/Logo';
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 
 const AuthTemplate = () => {
     const location = useLocation();
+    const navigate = useNavigate();
 
     const { currentUser } = useContext(UserContext);
 
@@ -13,10 +14,10 @@ const AuthTemplate = () => {
         if (currentUser) {
             redirectUser();
         }
-    });
+    }, [currentUser]);
 
     const redirectUser = () => {
-        return (document.location.href = '/');
+        navigate('/');
     };
 
     return (
