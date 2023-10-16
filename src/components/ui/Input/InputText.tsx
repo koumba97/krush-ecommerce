@@ -1,4 +1,4 @@
-import './Input.scss';
+import './InputText.scss';
 import { useState } from 'react';
 
 interface IProps {
@@ -12,7 +12,7 @@ interface IProps {
     icon?: string;
     onChange?: Function;
 }
-const Input = ({ type, label, defaultValue, value, placeholder, required, name, icon, onChange }: IProps) => {
+const InputText = ({ type, label, defaultValue, value, placeholder, required, name, icon, onChange }: IProps) => {
     const [_inputValue, setInputValue] = useState(defaultValue);
 
     const handleChange = (event: any) => {
@@ -25,7 +25,7 @@ const Input = ({ type, label, defaultValue, value, placeholder, required, name, 
     };
 
     return (
-        <div className="input">
+        <div className="input-text">
             {label ? <label>{label}</label> : null}
 
             <div className="input-container">
@@ -43,4 +43,4 @@ const Input = ({ type, label, defaultValue, value, placeholder, required, name, 
     );
 };
 
-export default Input;
+export default InputText;

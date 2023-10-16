@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../../utils/firebase/firebase';
 import Form from '../../ui/Form/Form';
-import Input from '../../ui/Input/Input';
+import Input from '../../ui/Input/InputText';
 import Button from '../../ui/Button/Button';
 import SocialMediaButton from '../../ui/SocialMediaButton/SocialMediaButton';
 
@@ -18,7 +18,6 @@ const SignUpForm = () => {
 
     const handleInputChange = (newValue: { name: string; value: string | number | undefined }) => {
         setFormFields({ ...formFields, [newValue.name]: newValue.value });
-        console.log(formFields);
     };
 
     const handleSubmit = async () => {

@@ -1,7 +1,7 @@
 import './SignInForm.scss';
 import { useState } from 'react';
 import { signInAuthUserWithEmailAndPassword } from '../../../utils/firebase/firebase';
-import Input from '../../ui/Input/Input';
+import Input from '../../ui/Input/InputText';
 import Form from '../../ui/Form/Form';
 import Button from '../../ui/Button/Button';
 import { Link } from 'react-router-dom';

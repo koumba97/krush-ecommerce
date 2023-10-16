@@ -1,0 +1,82 @@
+@import '../../../variables.scss';
+
+.input-number {
+    display: flex;
+
+    .input-control-container {
+        display: flex;
+        flex-direction: column;
+        margin-right: -12px;
+        margin-bottom: -4px;
+        margin-top: -4px;
+        border-left: solid 1px $grey-200;
+        button {
+            background-color: unset;
+            border: none;
+            display: flex;
+            align-items: center;
+            height: 23px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            i {
+                font-size: 16px;
+                color: $grey-200;
+                margin: auto;
+                display: block;
+                transition: size 0.3s color 0.3s;
+            }
+
+            &:first-child {
+                border-radius: 0 8px 0 0;
+            }
+            &:last-child {
+                border-radius: 0 0 8px 0;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.578);
+                i {
+                    color: $outline-color;
+                }
+            }
+            &:active {
+                i {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.input-number {
+    background-color: $grey-100;
+    border-radius: 8px;
+    padding: 4px 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 70px;
+    &:focus-within {
+        outline-style: solid;
+        outline-width: 2px;
+        outline-color: $outline-color;
+        outline-offset: 1px;
+    }
+
+    i {
+        width: max-content;
+        font-size: 24px;
+        color: $grey-200;
+    }
+    input {
+        border: none;
+        height: 36px;
+        background-color: unset;
+        outline: unset;
+        font-size: 16px;
+        width: 100%;
+        &::placeholder {
+            color: $grey-200;
+        }
+    }
+}

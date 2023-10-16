@@ -1,5 +1,22 @@
 .product {
-    min-height: 90vh;
+    border: solid;
     display: flex;
     gap: 20px;
+
+    .product-details-container {
+        text-align: left;
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product-name {
+            font-size: 30px;
+            font-family: 'Lemon milk';
+        }
+        .bottom {
+            display: flex;
+            gap: 12px;
+        }
+    }
 }
