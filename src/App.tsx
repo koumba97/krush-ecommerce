@@ -5,11 +5,8 @@ import AppTemplate from './templates/AppTemplate/AppTemplate.tsx';
 import AuthTemplate from './templates/AuthTemplate/AuthTemplate.tsx';
 import SignInForm from './components/Auth/SignInForm/SignInForm.tsx';
 import SignUpForm from './components/Auth/SignUpForm/SignUpForm.tsx';
-import { useContext } from 'react';
-import { UserContext } from './contexts/UserContext.tsx';
 
 const App = () => {
-    const { currentUser } = useContext(UserContext);
     return (
         <Routes>
             <Route path="/" element={<AppTemplate />}>

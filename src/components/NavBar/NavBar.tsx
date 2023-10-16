@@ -5,7 +5,6 @@ import Modal from '../Modal/Modal';
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import { signOutUser } from '../../utils/firebase/firebase';
-import { CDropdown, CDropdownToggle, CDropdownMenu } from '@coreui/react';
 import { Link } from 'react-router-dom';
 import Dropdown from '../Dropdown/Dropdown';
 
