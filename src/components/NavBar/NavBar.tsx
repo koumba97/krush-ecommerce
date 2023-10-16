@@ -7,6 +7,7 @@ import { UserContext } from '../../contexts/UserContext';
 import { signOutUser } from '../../utils/firebase/firebase';
 import { CDropdown, CDropdownToggle, CDropdownMenu } from '@coreui/react';
 import { Link } from 'react-router-dom';
+import Dropdown from '../Dropdown/Dropdown';
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false);
@@ -47,13 +48,15 @@ const NavBar = () => {
                         <i className="las la-search"></i>
                     </a>
 
-                    <CDropdown variant="nav-item">
-                        <CDropdownToggle size="lg">
-                            <i className="lar la-user-circle"></i>
-                        </CDropdownToggle>
-
+                    <Dropdown
+                        triggerItem={
+                            <div className="nav-link" id="search-link">
+                                <i className="lar la-user-circle"></i>
+                            </div>
+                        }
+                    >
                         {currentUser ? (
-                            <CDropdownMenu>
+                            <div>
                                 <Link to="/profile" className="dropdown-item">
                                     <i className="las la-user dropdown-item-icon"></i>
                                     <span>Profile</span>
@@ -62,9 +65,9 @@ const NavBar = () => {
                                     <i className="las la-sign-out-alt dropdown-item-icon"></i>
                                     <span>Log out</span>
                                 </div>
-                            </CDropdownMenu>
+                            </div>
                         ) : (
-                            <CDropdownMenu>
+                            <div>
                                 <Link to="/register" className="dropdown-item">
                                     <i className="las la-user-plus dropdown-item-icon"></i>
                                     <span>Join</span>
@@ -73,9 +76,9 @@ const NavBar = () => {
                                     <i className="las la-sign-in-alt dropdown-item-icon"></i>
                                     <span>Sign in</span>
                                 </Link>
-                            </CDropdownMenu>
+                            </div>
                         )}
-                    </CDropdown>
+                    </Dropdown>
 
                     <a className="nav-link" id="wishlist-link">
                         <i className="lar la-heart"></i>

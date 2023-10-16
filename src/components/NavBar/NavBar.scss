@@ -44,14 +44,6 @@ nav {
                 transform: scale(0.9);
             }
         }
-        li {
-            list-style: none;
-            a {
-                &::after {
-                    content: none;
-                }
-            }
-        }
     }
 
     @media (min-width: $sm-breakpoint) and (max-width: $md-breakpoint) {
@@ -74,7 +66,7 @@ nav {
     @media (min-width: 1px) and (max-width: $sm-breakpoint) {
         padding: 10px 20px;
         width: max-content;
-        width: 100%;
+        width: calc(100% - 20px * 2);
 
         .search-bar {
             display: none;
