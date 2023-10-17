@@ -1,0 +1,35 @@
+@import '../../../variables.scss';
+
+.cart-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+
+    i {
+        font-size: 35px;
+        margin: auto;
+    }
+    .item-amount-wrapper {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+
+        .item-amount {
+            width: max-content;
+            height: max-content;
+            padding: 4px;
+            font-size: 10px;
+            line-height: 8px;
+            margin: auto;
+            position: relative;
+            top: 4px;
+            text-align: center;
+            background-color: $brand-color;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+    }
+}

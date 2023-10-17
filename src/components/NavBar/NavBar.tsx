@@ -1,12 +1,13 @@
 import './NavBar.scss';
 import Logo from '../ui/Logo/Logo';
 import SearchBar from '../SearchBar/SearchBar';
-import Modal from '../Modal/Modal';
+import Modal from '../ui/Modal/Modal';
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import { signOutUser } from '../../utils/firebase/firebase';
 import { Link } from 'react-router-dom';
-import Dropdown from '../Dropdown/Dropdown';
+import Dropdown from '../ui/Dropdown/Dropdown';
+import CartIcon from '../ui/CartIcon/CartIcon';
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false);
@@ -83,9 +84,7 @@ const NavBar = () => {
                         <i className="lar la-heart"></i>
                     </a>
 
-                    <a className="nav-link" id="cart-link">
-                        <i className="las la-shopping-bag"></i>
-                    </a>
+                    <CartIcon className="nav-link" id="cart-link" itemAmount={1} />
                 </div>
             </nav>
 
