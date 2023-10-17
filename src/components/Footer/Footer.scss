@@ -5,9 +5,13 @@ footer {
     color: white;
     padding: 20px;
     min-height: 200px;
-
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
+    .main-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .dev {
+        font-size: 12px;
+        color: $grey-400;
     }
 }
