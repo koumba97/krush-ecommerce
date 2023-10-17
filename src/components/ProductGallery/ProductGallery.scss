@@ -9,6 +9,26 @@
         background-color: $grey-100;
         background-size: cover;
         background-position: center;
+        display: flex;
+        justify-content: space-between;
+        .slide-control-btn {
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            padding: 0 14px;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 1;
+            }
+            i {
+                font-size: 50px;
+                color: black;
+                opacity: 0.5;
+            }
+        }
     }
 
     .slide-container {
@@ -18,12 +38,31 @@
         flex-direction: column;
         gap: 12px;
 
-        .slide {
+        .slide-wrapper {
             width: 100px;
             height: 180px;
-            background-color: $grey-100;
-            background-size: cover;
-            background-position: center;
+
+            background-color: rgb(40, 40, 40);
+            &.active {
+                background-color: white;
+                .slide {
+                    opacity: 0.8;
+                }
+            }
+
+            .slide {
+                width: 100%;
+                height: 100%;
+                opacity: 0.5;
+
+                background-size: cover;
+                background-position: center;
+                cursor: pointer;
+                transition: opacity 0.2s;
+                &:hover {
+                    opacity: 1;
+                }
+            }
         }
     }
 
@@ -39,12 +78,14 @@
             height: 100px;
             gap: 8px;
 
-            .slide {
+            .slide-wrapper {
                 flex: 1;
                 height: 100%;
-                background-color: $grey-100;
-                background-size: cover;
-                background-position: center;
+                .slide {
+                    background-color: $grey-100;
+                    background-size: cover;
+                    background-position: center;
+                }
             }
         }
     }

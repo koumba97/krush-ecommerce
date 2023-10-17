@@ -2,7 +2,7 @@ import ProductGallery from '../ProductGallery/ProductGallery';
 import './Product.scss';
 import { ProductsContext } from '../../contexts/ProductsContext';
 import { useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Button from '../ui/Button/Button';
 import { LikeButton } from '../ui/LikeButton/LikeButton';
 import InputNumber from '../ui/InputNumber/InputNumber';
@@ -26,7 +26,12 @@ const Product = () => {
 
     return (
         <div className="product">
-            <ProductGallery images={productData ? productData.images : []} />
+            <div>
+                <Link to="/" className="back-link">
+                    <i className="las la-angle-left"></i> Back
+                </Link>
+                <ProductGallery images={productData ? productData.images : []} />
+            </div>
             <div className="product-details-container">
                 <div className="top">
                     <h3 className="product-name">{productData?.name}</h3>

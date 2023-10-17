@@ -49,7 +49,7 @@ const NavBar = () => {
 
                     <Dropdown
                         triggerItem={
-                            <div className="nav-link" id="search-link">
+                            <div className="nav-link" id="profile-link">
                                 <i className="lar la-user-circle"></i>
                             </div>
                         }

@@ -4,6 +4,17 @@
     display: flex;
     gap: 20px;
 
+    .back-link {
+        width: max-content;
+        display: block;
+        color: $grey-400;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $grey-800;
+        }
+    }
     .product-details-container {
         text-align: left;
         .top {
