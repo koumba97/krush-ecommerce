@@ -2,6 +2,32 @@
 
 .input-number {
     display: flex;
+    background-color: $grey-50;
+    border-radius: 8px;
+    padding: 4px 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 70px;
+
+    &:focus-within {
+        outline-style: solid;
+        outline-width: 2px;
+        outline-color: $outline-color;
+        outline-offset: 1px;
+    }
+
+    input {
+        border: none;
+        height: 36px;
+        background-color: unset;
+        outline: unset;
+        font-size: 16px;
+        width: 100%;
+        &::placeholder {
+            color: $grey-200;
+        }
+    }
 
     .input-control-container {
         display: flex;
@@ -10,6 +36,7 @@
         margin-bottom: -4px;
         margin-top: -4px;
         border-left: solid 1px $grey-200;
+
         button {
             background-color: unset;
             border: none;
@@ -44,39 +71,6 @@
                     font-size: 12px;
                 }
             }
-        }
-    }
-}
-
-.input-number {
-    background-color: $grey-100;
-    border-radius: 8px;
-    padding: 4px 12px;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    width: 70px;
-    &:focus-within {
-        outline-style: solid;
-        outline-width: 2px;
-        outline-color: $outline-color;
-        outline-offset: 1px;
-    }
-
-    i {
-        width: max-content;
-        font-size: 24px;
-        color: $grey-200;
-    }
-    input {
-        border: none;
-        height: 36px;
-        background-color: unset;
-        outline: unset;
-        font-size: 16px;
-        width: 100%;
-        &::placeholder {
-            color: $grey-200;
         }
     }
 }

@@ -1,5 +1,6 @@
+@import '../../variables.scss';
+
 .product {
-    border: solid;
     display: flex;
     gap: 20px;
 
@@ -17,6 +18,27 @@
         .bottom {
             display: flex;
             gap: 12px;
+        }
+    }
+
+    @media (min-width: 1px) and (max-width: $lg-breakpoint) {
+        flex-direction: column;
+        width: max-content;
+        margin: auto;
+
+        .product-details-container {
+            text-align: left;
+            max-width: 520px;
+            width: 100%;
+            .product-name {
+                margin: 0;
+            }
+        }
+
+        @media (min-width: 1px) and (max-width: 550px) {
+            flex-direction: column;
+            width: 100%;
+            margin: auto;
         }
     }
 }
