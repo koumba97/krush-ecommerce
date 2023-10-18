@@ -37,4 +37,40 @@
 .cart-content {
     padding: 8px 12px;
     width: 300px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    .list {
+        height: auto;
+        flex: 1;
+        max-height: 360px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        overflow: scroll;
+
+        .cart-item {
+            padding-bottom: 8px;
+            border-bottom: solid 1px $grey-200;
+            &:last-of-type {
+                border: none;
+            }
+        }
+    }
+    .empty-cart-message {
+        text-align: center;
+        align-self: center;
+        margin: auto;
+        color: $grey-400;
+    }
+
+    .sub-total-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .button {
+        width: 100%;
+        text-align: center;
+    }
 }

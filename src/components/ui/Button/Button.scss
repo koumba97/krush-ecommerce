@@ -6,25 +6,33 @@
     border-radius: 8px;
     border: none;
     font-size: 20px;
-    font-weight: bold;
     display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
+    cursor: pointer;
 
-    i {
-        font-size: 30px;
+    .button-content {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+        margin: auto;
+        i {
+            font-size: 30px;
+        }
     }
+
     &:focus {
         outline-style: solid;
         outline-width: 2px;
         outline-color: $outline-color;
         outline-offset: 1px;
     }
-    &:active {
+
+    &:active:not(:disabled) {
         transform: scale(0.96);
     }
+
     &.primary {
         background-color: $brand-color;
         color: white;
@@ -35,7 +43,12 @@
     }
 
     &.secondary {
-        // secondary button style
+        background-color: $grey-800;
+        color: white;
+
+        &:hover {
+            background-color: mix(black, $grey-800, 100%);
+        }
     }
 
     &.success {
@@ -48,5 +61,13 @@
 
     &.danger {
         // danger button style
+    }
+
+    &:disabled {
+        background-color: $grey-200;
+        cursor: not-allowed;
+        &:hover {
+            background-color: $grey-300;
+        }
     }
 }

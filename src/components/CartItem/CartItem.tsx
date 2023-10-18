@@ -1,4 +1,5 @@
 import { CartItem as CartItemType } from '../../types/CartItem';
+import InputNumber from '../ui/InputNumber/InputNumber';
 import './CartItem.scss';
 
 interface IProp {
@@ -14,7 +15,10 @@ const CartItem = ({ item }: IProp) => {
             <div className="item-data">
                 <h5 className="item-name">{name}</h5>
                 <div className="item-price-amount">
-                    {price.value} x {amount} {price.currency}
+                    <p>
+                        {price.value} {price.currency}
+                    </p>
+                    <InputNumber value={amount} min={0} name="cart-item" />
                 </div>
             </div>
         </div>
