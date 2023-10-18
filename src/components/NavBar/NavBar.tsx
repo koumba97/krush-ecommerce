@@ -84,7 +84,7 @@ const NavBar = () => {
                         <i className="lar la-heart"></i>
                     </a>
 
-                    <CartIcon className="nav-link" id="cart-link" itemAmount={1} />
+                    <CartIcon className="nav-link" id="cart-link" />
                 </div>
             </nav>
 
