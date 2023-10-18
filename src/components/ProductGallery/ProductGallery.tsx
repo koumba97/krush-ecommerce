@@ -25,11 +25,13 @@ const ProductGallery = ({ images }: IProp) => {
         <div className="product-gallery">
             <div className="slide-container">
                 {images.map((image: string, index) => (
-                    <div className={`slide-wrapper ${index === activeSlideIndex ? 'active' : ''}`}>
+                    <div
+                        className={`slide-wrapper ${index === activeSlideIndex ? 'active' : ''}`}
+                        key={`slide-${index}`}
+                    >
                         <div
                             className="slide"
                             style={{ backgroundImage: `url(${image})` }}
-                            key={`slide-${index}`}
                             onClick={() => updateActiveSlide(index)}
                         ></div>
                     </div>

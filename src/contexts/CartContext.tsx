@@ -1,7 +1,40 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import { CartItem } from '../types/CartItem';
+import { Product } from '../types/Product';
+
+const addCartItem = (cartItems: CartItem[], productToAdd: Product, amount: number): CartItem[] => {
+    const itemIsInCart = cartItems.find((item) => item.id === productToAdd.id);
+
+    if (itemIsInCart) {
+        return cartItems.map((cartItem) =>
+            cartItem.id === productToAdd.id ? { ...cartItem, amount: cartItem.amount + amount } : cartItem
+        );
+    } else {
+        const newCartItem: CartItem = {
+            id: productToAdd.id,
+            name: productToAdd.name,
+            price: productToAdd.price,
+            image: productToAdd.images[0],
+            amount: amount,
+        };
+        return [...cartItems, newCartItem];
+    }
+};
+
+const calculateItemsAmount = (cartItems: CartItem[]): number => {
+    let itemsAmount = 0;
+    cartItems.map((item) => {
+        itemsAmount += item.amount;
+    });
+    console.log(itemsAmount);
+
+    return itemsAmount;
+};
 
 export const CartContext = createContext({
-    cartItems: [] as any[],
+    cartItems: [] as CartItem[],
+    cartItemsAmount: 0,
+    addItemToCart: (_productToAdd: Product, _amount: number) => {},
 });
 
 interface IProp {
@@ -9,7 +42,18 @@ interface IProp {
 }
 
 export const CartProvider = ({ children }: IProp) => {
-    const [cartItems, _setCartItems] = useState(['plant-1', 'plant-2']);
-    const value = { cartItems };
+    const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    const [cartItemsAmount, setCartItemsAmount] = useState(calculateItemsAmount(cartItems));
+
+    const addItemToCart = (productToAdd: Product, amount: number) => {
+        setCartItems(addCartItem(cartItems, productToAdd, amount));
+    };
+
+    useEffect(() => {
+        setCartItemsAmount(calculateItemsAmount(cartItems));
+    }, [cartItems]);
+
+    const value = { cartItems, cartItemsAmount, addItemToCart };
+
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

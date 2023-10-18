@@ -23,7 +23,7 @@
         display: block;
         position: relative;
         border-radius: 12px;
-        height: 100%;
+        height: calc(100% - 8px * 2);
 
         .like-button {
             margin-left: auto;

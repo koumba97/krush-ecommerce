@@ -6,9 +6,10 @@ import { Link, useParams } from 'react-router-dom';
 import Button from '../ui/Button/Button';
 import { LikeButton } from '../ui/LikeButton/LikeButton';
 import InputNumber from '../ui/InputNumber/InputNumber';
+import { CartContext } from '../../contexts/CartContext';
 
 const defaultFormFields = {
-    amount: 0,
+    amount: 1,
 };
 
 const Product = () => {
@@ -16,12 +17,16 @@ const Product = () => {
     const { amount } = productValue;
     const { productId } = useParams<{ productId: string }>();
     const { products } = useContext(ProductsContext);
+    const { addItemToCart } = useContext(CartContext);
 
     const productData = products.find((product) => product.id === Number(productId));
 
     const handleInputChange = (newValue: { name: 'amount'; value: number }) => {
         setProductValue({ [newValue.name]: newValue.value });
-        console.log(newValue);
+    };
+
+    const addToCartHandler = () => {
+        if (productData) addItemToCart(productData, amount);
     };
 
     return (
@@ -41,8 +46,10 @@ const Product = () => {
                 <p>{productData?.description}</p>
 
                 <div className="bottom">
-                    <Button icon="las la-cart-plus">Add to cart</Button>
-                    <InputNumber name="amount" min={0} max={5} value={amount} onChange={handleInputChange} />
+                    <Button icon="las la-cart-plus" onClick={addToCartHandler}>
+                        Add to cart
+                    </Button>
+                    <InputNumber name="amount" min={1} max={5} value={amount} onChange={handleInputChange} />
                 </div>
             </div>
         </div>

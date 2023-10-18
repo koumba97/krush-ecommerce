@@ -7,7 +7,7 @@ import { UserContext } from '../../contexts/UserContext';
 import { signOutUser } from '../../utils/firebase/firebase';
 import { Link } from 'react-router-dom';
 import Dropdown from '../ui/Dropdown/Dropdown';
-import CartIcon from '../ui/CartIcon/CartIcon';
+import CartIcon from '../CartIcon/CartIcon';
 
 const NavBar = () => {
     const [searchBarVisibility, setSearchBarVisibility] = useState<boolean>(false);

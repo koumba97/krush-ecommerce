@@ -13,16 +13,17 @@ export const ProductCard = ({ product }: IProps) => {
 
     return (
         <div className="product-card">
-            <div
-                className="image-article"
-                onClick={() => (document.location.href = `/product/${product.id}`)}
-                style={{ backgroundImage: `url(${imageCover})` }}
-                onMouseEnter={() => setImageCover(product.images[1])}
-                onMouseLeave={() => setImageCover(product.images[0])}
-            >
-                <LikeButton isLiked={false} />
-                {product.bestseller ? <div className="bestseller-label">Bestseller</div> : null}
-            </div>
+            <Link to={`/product/${product.id}`}>
+                <div
+                    className="image-article"
+                    style={{ backgroundImage: `url(${imageCover})` }}
+                    onMouseEnter={() => setImageCover(product.images[1])}
+                    onMouseLeave={() => setImageCover(product.images[0])}
+                >
+                    <LikeButton isLiked={false} />
+                    {product.bestseller ? <div className="bestseller-label">Bestseller</div> : null}
+                </div>
+            </Link>
 
             <div className="article-details-container">
                 <Link to={`/product/${product.id}`}>

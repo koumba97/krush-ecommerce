@@ -6,11 +6,15 @@ interface IProp {
     type?: 'button' | 'submit' | 'reset';
     color?: Colors;
     icon?: any;
+    onClick?: Function;
 }
 
-const Button = ({ children, type = 'button', color = Colors.primary, icon }: IProp) => {
+const Button = ({ children, type = 'button', color = Colors.primary, icon, onClick }: IProp) => {
+    const handleClick = () => {
+        if (onClick) onClick();
+    };
     return (
-        <button className={`${color} button`} type={type}>
+        <button className={`${color} button`} type={type} onClick={handleClick}>
             {icon ? <i className={`${icon} icon`}></i> : null}
             {children}
         </button>

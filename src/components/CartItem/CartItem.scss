@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+.cart-item {
+    display: flex;
+    gap: 8px;
+
+    .item-name {
+        margin: 0;
+    }
+    .item-image {
+        width: 40px;
+        height: 60px;
+        background-color: $grey-300;
+        background-size: cover;
+        background-position: center;
+    }
+}
