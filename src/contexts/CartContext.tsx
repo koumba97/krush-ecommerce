@@ -26,7 +26,6 @@ const calculateItemsAmount = (cartItems: CartItem[]): number => {
     cartItems.map((item) => {
         itemsAmount += item.amount;
     });
-    console.log(itemsAmount);
 
     return itemsAmount;
 };

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Button from '../ui/Button/Button';
 import Dropdown from '../ui/Dropdown/Dropdown';
-import './CartIcon.scss';
+import './Cart.scss';
 import { CartContext, CartProvider } from '../../contexts/CartContext';
 import CartItem from '../CartItem/CartItem';
 
@@ -9,7 +9,7 @@ interface IProp {
     className?: string;
     id?: string;
 }
-const CartIcon = ({ className, id }: IProp) => {
+const Cart = ({ className, id }: IProp) => {
     const { cartItems, cartItemsAmount } = useContext(CartContext);
 
     return (
@@ -33,4 +33,4 @@ const CartIcon = ({ className, id }: IProp) => {
     );
 };
 
-export default CartIcon;
+export default Cart;
