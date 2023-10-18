@@ -7,7 +7,7 @@ interface IProp {
 }
 const Dropdown = ({ children, triggerItem }: IProp) => {
     const [dropdownVisibility, setDropdownVisibility] = useState(false);
-    const dropdownElement = useRef(null);
+    const dropdownElement = useRef<HTMLDivElement>(null);
 
     const toogleDropdown = () => {
         setDropdownVisibility(!dropdownVisibility);

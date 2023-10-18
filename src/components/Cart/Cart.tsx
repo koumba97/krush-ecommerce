@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import Button from '../ui/Button/Button';
 import Dropdown from '../ui/Dropdown/Dropdown';
 import './Cart.scss';
-import { CartContext, CartProvider } from '../../contexts/CartContext';
+import { CartContext } from '../../contexts/CartContext';
 import CartItem from '../CartItem/CartItem';
 
 interface IProp {
