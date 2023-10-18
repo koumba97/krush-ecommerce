@@ -68,6 +68,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        h5 {
+            text-transform: uppercase;
+            margin: 0;
+            color: $grey-400;
+            font-weight: 500;
+        }
+        h3 {
+            margin: 0;
+        }
     }
     .button {
         width: 100%;

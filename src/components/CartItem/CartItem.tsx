@@ -16,7 +16,7 @@ const CartItem = ({ item }: IProp) => {
                 <h5 className="item-name">{name}</h5>
                 <div className="item-price-amount">
                     <p>
-                        {price.value} {price.currency}
+                        {price.value} {price.currency} X {amount}
                     </p>
                     <InputNumber value={amount} min={0} name="cart-item" />
                 </div>

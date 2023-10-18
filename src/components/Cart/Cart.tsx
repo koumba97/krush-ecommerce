@@ -11,7 +11,7 @@ interface IProp {
     id?: string;
 }
 const Cart = ({ className, id }: IProp) => {
-    const { cartItems, cartItemsAmount } = useContext(CartContext);
+    const { cartItems, cartItemsAmount, subTotal } = useContext(CartContext);
 
     return (
         <Dropdown
@@ -37,7 +37,9 @@ const Cart = ({ className, id }: IProp) => {
 
                 <div className="sub-total-container">
                     <h5>Sub-total</h5>
-                    <h3>100 €</h3>
+                    <h3>
+                        {subTotal.value} {subTotal.currency}
+                    </h3>
                 </div>
                 <Button color={Colors.secondary} disabled={cartItems.length === 0}>
                     Checkout
