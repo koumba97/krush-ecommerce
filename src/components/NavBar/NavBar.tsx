@@ -38,7 +38,7 @@ const NavBar = () => {
     };
 
     return (
-        <>
+        <nav className="nav-bar-wrapper">
             <nav>
                 <Logo />
 
@@ -91,7 +91,7 @@ const NavBar = () => {
             <Modal isOpen={searchBarVisibility} closeModal={closeSearchBarModal} width="70vw">
                 <SearchBar />
             </Modal>
-        </>
+        </nav>
     );
 };
 

@@ -1,86 +1,95 @@
 @import '../../variables.scss';
 
-nav {
-    padding: 32px 64px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .search-bar {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .links-container {
+.nav-bar-wrapper {
+    display: block;
+    height: 60px;
+    nav {
+        padding: 32px 64px;
         display: flex;
-        width: max-content;
-        justify-content: flex-end;
+        z-index: 10;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: calc(100% - 20px * 2);
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.514);
 
-        #search-link {
-            display: none;
+        .search-bar {
+            width: 100%;
+            max-width: 300px;
         }
 
-        .nav-link {
-            border-radius: 100%;
-            width: 40px;
-            height: 40px;
+        .links-container {
             display: flex;
-            background-color: transparent;
-            transition: background-color 0.3s linear, transform 0.3s linear;
-            cursor: pointer;
+            width: max-content;
+            justify-content: flex-end;
 
-            i {
-                font-size: 35px;
-                margin: auto;
-                color: $grey-400;
+            #search-link {
+                display: none;
             }
-            &:hover {
-                //background-color: $grey-100;
+
+            .nav-link {
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                background-color: transparent;
+                transition: background-color 0.3s linear, transform 0.3s linear;
+                cursor: pointer;
+
                 i {
-                    color: $grey-900;
+                    font-size: 35px;
+                    margin: auto;
+                    color: $grey-400;
+                }
+                &:hover {
+                    //background-color: $grey-100;
+                    i {
+                        color: $grey-900;
+                    }
+                }
+                &:active {
+                    transform: scale(0.9);
                 }
             }
-            &:active {
-                transform: scale(0.9);
+        }
+
+        @media (min-width: $sm-breakpoint) and (max-width: $md-breakpoint) {
+            padding: 10px 20px;
+            .krush-logo {
+                flex: unset;
+            }
+
+            .search-bar {
+                display: none;
+            }
+
+            .links-container {
+                #search-link {
+                    display: flex;
+                }
             }
         }
-    }
 
-    @media (min-width: $sm-breakpoint) and (max-width: $md-breakpoint) {
-        padding: 10px 20px;
-        .krush-logo {
-            flex: unset;
-        }
+        @media (min-width: 1px) and (max-width: $sm-breakpoint) {
+            padding: 10px 20px;
+            width: max-content;
+            width: calc(100% - 20px * 2);
 
-        .search-bar {
-            display: none;
-        }
-
-        .links-container {
-            #search-link {
-                display: flex;
+            .search-bar {
+                display: none;
             }
-        }
-    }
-
-    @media (min-width: 1px) and (max-width: $sm-breakpoint) {
-        padding: 10px 20px;
-        width: max-content;
-        width: calc(100% - 20px * 2);
-
-        .search-bar {
-            display: none;
-        }
-        .links-container {
-            gap: 4px;
-            #search-link {
-                display: flex;
-            }
-            .nav-link {
-                height: 24px;
-                width: 24px;
-                i {
-                    font-size: 24px;
+            .links-container {
+                gap: 4px;
+                #search-link {
+                    display: flex;
+                }
+                .nav-link {
+                    height: 24px;
+                    width: 24px;
+                    i {
+                        font-size: 24px;
+                    }
                 }
             }
         }
