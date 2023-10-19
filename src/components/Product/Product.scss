@@ -3,6 +3,7 @@
 .product {
     display: flex;
     gap: 20px;
+    min-height: 100vh;
 
     .back-link {
         width: max-content;

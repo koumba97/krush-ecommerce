@@ -2,7 +2,8 @@
 
 .nav-bar-wrapper {
     display: block;
-    height: 60px;
+    height: calc(50px + 32px * 2);
+
     nav {
         padding: 32px 64px;
         display: flex;
@@ -10,7 +11,7 @@
         justify-content: space-between;
         align-items: center;
         position: fixed;
-        width: calc(100% - 20px * 2);
+        width: calc(100% - 64px * 2);
         left: 0;
         background-color: rgba(255, 255, 255, 0.514);
 
@@ -43,7 +44,6 @@
                     color: $grey-400;
                 }
                 &:hover {
-                    //background-color: $grey-100;
                     i {
                         color: $grey-900;
                     }
@@ -55,7 +55,9 @@
         }
 
         @media (min-width: $sm-breakpoint) and (max-width: $md-breakpoint) {
-            padding: 10px 20px;
+            padding: 30px 20px;
+            width: calc(100% - 20px * 2);
+
             .krush-logo {
                 flex: unset;
             }
@@ -72,7 +74,7 @@
         }
 
         @media (min-width: 1px) and (max-width: $sm-breakpoint) {
-            padding: 10px 20px;
+            padding: 30px 20px;
             width: max-content;
             width: calc(100% - 20px * 2);
 
