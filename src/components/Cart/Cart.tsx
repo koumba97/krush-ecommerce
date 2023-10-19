@@ -5,13 +5,19 @@ import './Cart.scss';
 import { CartContext } from '../../contexts/CartContext';
 import CartItem from '../CartItem/CartItem';
 import { Colors } from '../../types/Colors';
+import { useNavigate } from 'react-router-dom';
 
 interface IProp {
     className?: string;
     id?: string;
 }
 const Cart = ({ className, id }: IProp) => {
+    const navigate = useNavigate();
     const { cartItems, cartItemsAmount, subTotal } = useContext(CartContext);
+
+    const goToCheckoutHandler = () => {
+        navigate('/checkout');
+    };
 
     return (
         <Dropdown
@@ -41,7 +47,7 @@ const Cart = ({ className, id }: IProp) => {
                         {subTotal.value} {subTotal.currency}
                     </h3>
                 </div>
-                <Button color={Colors.secondary} disabled={cartItems.length === 0}>
+                <Button color={Colors.secondary} disabled={cartItems.length === 0} onClick={goToCheckoutHandler}>
                     Checkout
                 </Button>
             </div>

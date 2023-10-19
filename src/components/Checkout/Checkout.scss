@@ -1,0 +1,26 @@
+@import '../../variables.scss';
+
+.checkout {
+    min-height: 100vh;
+    .cart-content {
+        margin: auto;
+        min-height: 500px;
+        width: auto;
+        height: auto;
+        gap: 50px;
+
+        .list {
+            gap: 20px;
+            overflow: visible;
+            height: auto;
+            min-height: unset;
+            .cart-item {
+                padding-bottom: 20px;
+                .item-image {
+                    width: 100px;
+                    height: 140px;
+                }
+            }
+        }
+    }
+}

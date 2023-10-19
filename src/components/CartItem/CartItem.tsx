@@ -11,10 +11,14 @@ interface IProp {
 
 const CartItem = ({ item, index }: IProp) => {
     const { image, name, price, amount } = item;
-    const { updateItemAmount } = useContext(CartContext);
+    const { updateItemAmount, deleteItemFromCart } = useContext(CartContext);
 
     const updateAmount = (newValue: { name: string; value: number }) => {
         updateItemAmount(index, newValue.value);
+    };
+
+    const deleteItem = () => {
+        deleteItemFromCart(index);
     };
 
     return (
@@ -28,6 +32,11 @@ const CartItem = ({ item, index }: IProp) => {
                     </p>
                     <InputNumber value={amount} min={0} name="cart-item" onChange={updateAmount} />
                 </div>
+            </div>
+            <div className="delete-item">
+                <button onClick={deleteItem}>
+                    <i className="las la-trash-alt"></i>
+                </button>
             </div>
         </div>
     );

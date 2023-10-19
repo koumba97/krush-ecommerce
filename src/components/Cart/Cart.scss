@@ -52,6 +52,9 @@
         .cart-item {
             padding-bottom: 8px;
             border-bottom: solid 1px $grey-200;
+            .item-name {
+                text-align: left;
+            }
             &:last-of-type {
                 border: none;
             }

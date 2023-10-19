@@ -4,6 +4,7 @@
     display: flex;
     gap: 8px;
     width: 100%;
+    align-items: stretch;
 
     .item-image {
         width: 60px;
@@ -22,9 +23,29 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            bottom: -4px;
             p {
                 font-size: 16px;
                 margin: 0;
+            }
+        }
+    }
+    .delete-item {
+        display: flex;
+        align-items: flex-end;
+
+        button {
+            background-color: transparent;
+            border: none;
+        }
+        i {
+            color: $grey-400;
+            transform: color 0.3s;
+            cursor: pointer;
+            font-size: 24px;
+            &:hover {
+                color: $grey-800;
             }
         }
     }

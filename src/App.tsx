@@ -5,6 +5,7 @@ import AppTemplate from './templates/AppTemplate/AppTemplate.tsx';
 import AuthTemplate from './templates/AuthTemplate/AuthTemplate.tsx';
 import SignInForm from './components/Auth/SignInForm/SignInForm.tsx';
 import SignUpForm from './components/Auth/SignUpForm/SignUpForm.tsx';
+import Checkout from './components/Checkout/Checkout.tsx';
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
                 <Route index element={<Home />} />
                 <Route path="/category/:categoryName" element={<Home />} />
                 <Route path="/product/:productId" element={<Product />} />
+                <Route path="/checkout" element={<Checkout />} />
             </Route>
 
             <Route path="/" element={<AuthTemplate />}>
