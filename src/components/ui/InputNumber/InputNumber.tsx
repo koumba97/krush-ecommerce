@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './InputNumber.scss';
 
 interface IProp {
@@ -10,8 +10,11 @@ interface IProp {
 }
 const InputNumber = ({ value = 0, name, min, max, onChange }: IProp) => {
     const [inputValue, setInputValue] = useState(value);
-
     const INPUT_STEP = 1;
+
+    useEffect(() => {
+        setInputValue(value);
+    }, [value]);
 
     const handleChange = (event: any) => {
         const { value } = event.target;

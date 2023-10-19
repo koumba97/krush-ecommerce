@@ -40,10 +40,17 @@ const calculateSubTotal = (cartItems: CartItem[]): Price => {
     return { value: Number(subTotalValue.toFixed(2)), currency: '€' };
 };
 
+const updateCartItem = (cartItems: CartItem[], productIndex: number, amount: number): CartItem[] => {
+    cartItems[productIndex].amount = amount;
+
+    return [...cartItems];
+};
+
 export const CartContext = createContext({
     cartItems: [] as CartItem[],
     cartItemsAmount: 0,
     addItemToCart: (_productToAdd: Product, _amount: number) => {},
+    updateItemAmount: (_productIndex: number, _amount: number) => {},
     subTotal: {} as Price,
 });
 
@@ -60,12 +67,16 @@ export const CartProvider = ({ children }: IProp) => {
         setCartItems(addCartItem(cartItems, productToAdd, amount));
     };
 
+    const updateItemAmount = (productIndex: number, amount: number) => {
+        setCartItems(updateCartItem(cartItems, productIndex, amount));
+    };
+
     useEffect(() => {
         setCartItemsAmount(calculateItemsAmount(cartItems));
         setSubTotal(calculateSubTotal(cartItems));
     }, [cartItems]);
 
-    const value = { cartItems, cartItemsAmount, addItemToCart, subTotal };
+    const value = { cartItems, cartItemsAmount, updateItemAmount, addItemToCart, subTotal };
 
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

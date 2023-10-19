@@ -28,7 +28,7 @@ const Cart = ({ className, id }: IProp) => {
                 {cartItems.length > 0 ? (
                     <div className="list">
                         {cartItems.map((item, index) => {
-                            return <CartItem item={item} key={`cart-item-${index}`} />;
+                            return <CartItem item={item} index={index} key={`cart-item-${index}`} />;
                         })}
                     </div>
                 ) : (

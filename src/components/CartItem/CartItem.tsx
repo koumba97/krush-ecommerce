@@ -1,13 +1,21 @@
+import { useContext } from 'react';
 import { CartItem as CartItemType } from '../../types/CartItem';
 import InputNumber from '../ui/InputNumber/InputNumber';
 import './CartItem.scss';
+import { CartContext } from '../../contexts/CartContext';
 
 interface IProp {
     item: CartItemType;
+    index: number;
 }
 
-const CartItem = ({ item }: IProp) => {
+const CartItem = ({ item, index }: IProp) => {
     const { image, name, price, amount } = item;
+    const { updateItemAmount } = useContext(CartContext);
+
+    const updateAmount = (newValue: { name: string; value: number }) => {
+        updateItemAmount(index, newValue.value);
+    };
 
     return (
         <div className="cart-item">
@@ -18,7 +26,7 @@ const CartItem = ({ item }: IProp) => {
                     <p>
                         {price.value} {price.currency} X {amount}
                     </p>
-                    <InputNumber value={amount} min={0} name="cart-item" />
+                    <InputNumber value={amount} min={0} name="cart-item" onChange={updateAmount} />
                 </div>
             </div>
         </div>
