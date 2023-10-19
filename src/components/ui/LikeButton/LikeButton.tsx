@@ -9,9 +9,7 @@ export const LikeButton = ({ isLiked }: IProps) => {
     const [liked, setLiked] = useState<Boolean>(isLiked);
 
     const handleClick = (e: any) => {
-        e.stopPropagation();
-        console.log('like');
-
+        e.preventDefault();
         setLiked(!liked);
     };
 

@@ -42,6 +42,9 @@ const Product = () => {
                     <h3 className="product-name">{productData?.name}</h3>
                     <LikeButton isLiked={false} />
                 </div>
+                <h3 className="product-price">
+                    {productData?.price.value} {productData?.price.currency}
+                </h3>
 
                 <p>{productData?.description}</p>
 
