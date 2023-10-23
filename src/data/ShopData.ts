@@ -1,12 +1,12 @@
 import { Product } from '../types/Product';
-import { CategoryList } from '../types/CategoryList';
+import { CategoryList } from '../types/CategoryType';
 
-interface Shop {
+export interface ShopObject {
     title: CategoryList;
     iconClass: string;
     items: Product[];
 }
-export const ShopData: Shop[] = [
+export const ShopData: ShopObject[] = [
     {
         title: CategoryList.plants,
         iconClass: 'las la-leaf',

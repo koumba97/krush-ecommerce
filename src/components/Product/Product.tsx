@@ -1,32 +1,47 @@
 import ProductGallery from '../ProductGallery/ProductGallery';
 import './Product.scss';
-import { ProductsContext } from '../../contexts/ProductsContext';
-import { useContext, useState } from 'react';
+import { CategoriesContext } from '../../contexts/CategoriesContext';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Button from '../ui/Button/Button';
 import { LikeButton } from '../ui/LikeButton/LikeButton';
 import InputNumber from '../ui/InputNumber/InputNumber';
 import { CartContext } from '../../contexts/CartContext';
+import { Product as ProductType } from '../../types/Product';
+import { CategoryType } from '../../types/CategoryType';
 
 const defaultFormFields = {
     amount: 1,
 };
 
 const Product = () => {
-    const [productValue, setProductValue] = useState(defaultFormFields);
-    const { amount } = productValue;
-    const { productId } = useParams<{ productId: string }>();
-    const { products } = useContext(ProductsContext);
+    const [productAmount, setProductAmount] = useState(defaultFormFields);
+    const { amount } = productAmount;
+    const [productData, setProductData] = useState<ProductType | null>(null);
+
+    const { categoryName, productId } = useParams<{ categoryName: CategoryType; productId: string }>();
+    const { getProductById } = useContext(CategoriesContext);
     const { addItemToCart } = useContext(CartContext);
 
-    const productData = products.find((product) => product.id === Number(productId));
+    useEffect(() => {
+        const getProduct = async () => {
+            if (categoryName) {
+                const resp = await getProductById(categoryName, productId);
+                if (resp) {
+                    setProductData(resp);
+                    console.log(resp);
+                }
+            }
+        };
+        getProduct();
+    }, []);
 
     const handleInputChange = (newValue: { name: 'amount'; value: number }) => {
-        setProductValue({ [newValue.name]: newValue.value });
+        setProductAmount({ [newValue.name]: newValue.value });
     };
 
     const addToCartHandler = () => {
-        if (productData) addItemToCart(productData, amount);
+        if (productAmount && productData) addItemToCart(productData, amount);
     };
 
     return (
@@ -35,6 +50,7 @@ const Product = () => {
                 <Link to="/" className="back-link">
                     <i className="las la-angle-left"></i> Back
                 </Link>
+
                 <ProductGallery images={productData ? productData.images : []} />
             </div>
             <div className="product-details-container">

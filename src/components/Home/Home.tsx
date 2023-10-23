@@ -5,10 +5,10 @@ import Header from '../Header/Header.tsx';
 import Shop from '../Shop/Shop.tsx';
 import { Category } from '../../types/Category.ts';
 import { useParams } from 'react-router-dom';
-import { CategoryList } from '../../types/CategoryList.ts';
+import { CategoryList, CategoryType } from '../../types/CategoryType.ts';
 
 const Home = () => {
-    const { categoryName } = useParams<{ categoryName: string }>();
+    const { categoryName } = useParams<{ categoryName: CategoryType }>();
 
     const [currentCategory, setCurrentCategory] = useState<Category>(CategoriesData[0]);
 

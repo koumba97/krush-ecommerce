@@ -1,8 +1,8 @@
-import { CategoryList } from './CategoryList';
+import { CategoryType } from './CategoryType';
 
 export interface Category {
     id: number;
-    name: CategoryList;
+    name: CategoryType;
     title: string;
     imageUrl: string;
     iconClass: string;

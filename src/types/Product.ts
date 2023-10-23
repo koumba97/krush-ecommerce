@@ -1,4 +1,4 @@
-import { CategoryList } from './CategoryList';
+import { CategoryList } from './CategoryType';
 import { Price } from './Price';
 
 export interface Product {

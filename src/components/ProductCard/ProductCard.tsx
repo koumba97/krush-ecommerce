@@ -13,7 +13,7 @@ export const ProductCard = ({ product }: IProps) => {
 
     return (
         <div className="product-card">
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/product/${product.category}/${product.id}`}>
                 <div
                     className="image-article"
                     style={{ backgroundImage: `url(${imageCover})` }}

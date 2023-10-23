@@ -1,5 +1,5 @@
 import { Product } from '../types/Product';
-import { CategoryList } from '../types/CategoryList';
+import { CategoryList } from '../types/CategoryType';
 
 export const ProductsData: Product[] = [
     {
