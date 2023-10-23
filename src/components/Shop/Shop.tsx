@@ -21,7 +21,7 @@ const Shop = ({ currentCategory, categoryList, changeCategory }: IProp) => {
             if (result) setCategoryMap(result);
         };
         getCategoryMap();
-    }, []);
+    }, [currentCategory]);
     return (
         <section className="shop">
             <div className="preview-side">

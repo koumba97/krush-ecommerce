@@ -1,7 +1,7 @@
 import { Product } from '../types/Product';
 import { CategoryList } from '../types/CategoryType';
 
-export const ProductsData: Product[] = [
+export const PlantsData: Product[] = [
     {
         id: 1,
         name: 'Zamioculcas',
@@ -92,6 +92,99 @@ export const ProductsData: Product[] = [
         description: '1 Pilea - Diamètre du pot : 12 cm - Hauteur de la plante : Environ 20 cm (pot inclus)',
         price: {
             value: 32.9,
+            currency: '€',
+        },
+    },
+    {
+        id: 7,
+        name: 'Azalée Aimée',
+        category: CategoryList.plants,
+        images: [
+            'https://bergamotte.imgix.net/apx1fvmc19cw1yck83lkw8fiw6p3?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/u0lys4kp5al8fd413cyerrsdyqbv?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/7ni9ng1czasec7jgcxlwkwfcx2o6?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+        ],
+        description: 'Diamètre du pot : 24 cm - Hauteur : Entre 120 et 130 cm (pot inclus)',
+        price: {
+            value: 69.9,
+            currency: '€',
+        },
+    },
+    {
+        id: 8,
+        name: 'Strelitzia Rosalie',
+        category: CategoryList.plants,
+        images: [
+            'https://bergamotte.imgix.net/boweyytnq832yz312ilsyn53fba0?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/iq17qvu2nqxkeb6rnsco6ajanims?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/k4lw0ita53klc7016b7eir5rs3eh?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+        ],
+        description: 'Diamètre du pot : 14 cm - Hauteur : Entre 35 et 40 cm (pot inclus).',
+        price: {
+            value: 199.9,
+            currency: '€',
+        },
+        bestseller: true,
+    },
+    {
+        id: 9,
+        name: 'Ondine',
+        category: CategoryList.plants,
+        images: [
+            'https://bergamotte.imgix.net/ioij1bwsmngf3u3y3x24ms61qs6c?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/uh626wacptaxj182ji018ps6md8b?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/ow22btm7mnsnx46mmejpgvz26rrf?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+        ],
+        description: 'Diamètre du pot : 24 cm - Hauteur : Entre 110 et 120 cm (pot inclus)',
+        price: {
+            value: 59.9,
+            currency: '€',
+        },
+    },
+    {
+        id: 10,
+        name: 'Pothos Patrick',
+        category: CategoryList.plants,
+        images: [
+            'https://bergamotte.imgix.net/djussgxj5wofe575avhhg98bvexq?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/w7qyloj2n5cmgrvj226tjxoxtdb6?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/98gxmheykv73wnt03xpg8cbufvl0?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+        ],
+        description:
+            'Diamètre du pot : 14 cm - Hauteur : Entre 35 et 45 cm (pot inclus) - Selon la saison, la plante peut être livrée avec des fruits verts ou orange.',
+        price: {
+            value: 35.9,
+            currency: '€',
+        },
+        bestseller: true,
+    },
+    {
+        id: 11,
+        name: 'Cactus',
+        category: CategoryList.plants,
+        images: [
+            'https://bergamotte.imgix.net/72r1a9jvgv03fvuu5nol2kzpgbwa?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/7jda6effzfx34dt92j9yn3jj015u?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/4aer8rju4h1uvreii6ibjsn989fq?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+        ],
+        description: 'Diamètre du pot : 24 cm - Hauteur : Entre 85 et 105 cm (pot inclus)',
+        price: {
+            value: 29.9,
+            currency: '€',
+        },
+    },
+    {
+        id: 12,
+        name: 'Ficus Cloé',
+        category: CategoryList.plants,
+        images: [
+            'https://bergamotte.imgix.net/r6gbf8lvn6sbt7ebwmdkyuosyita?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/j5cr2lkzgwv82ap6lknbtxt3v5wm?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+            'https://bergamotte.imgix.net/ueu4orvy9vzcjb3s8qsrpl7z16xr?ixlib=rails-4.2.0&auto=format%2Ccompress&fit=crop&q=65&ar=4%3A5&w=2048',
+        ],
+        description: '1 Pilea - Diamètre du pot : 12 cm - Hauteur de la plante : Environ 20 cm (pot inclus)',
+        price: {
+            value: 29.9,
             currency: '€',
         },
     },

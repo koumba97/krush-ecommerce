@@ -29,7 +29,6 @@ const Product = () => {
                 const resp = await getProductById(categoryName, productId);
                 if (resp) {
                     setProductData(resp);
-                    console.log(resp);
                 }
             }
         };

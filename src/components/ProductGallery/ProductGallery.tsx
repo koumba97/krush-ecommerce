@@ -8,7 +8,6 @@ interface IProp {
 const ProductGallery = ({ images }: IProp) => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
     const [activeSlideImg, setActiveSlideImg] = useState(images[activeSlideIndex]);
-    console.log(images[activeSlideIndex]);
 
     useEffect(() => {
         setActiveSlideImg(images[activeSlideIndex]);

@@ -9,8 +9,8 @@ import { Category } from '../types/Category';
 export const CategoriesContext = createContext({
     categoriesMap: {} as ShopObject,
     categoriesList: [] as Category[],
-    getProductsByCategory: async (_categoryName: CategoryType): Promise<Product[] | null> => {
-        return null;
+    getProductsByCategory: async (_categoryName: CategoryType): Promise<Product[] | []> => {
+        return [];
     },
     getProductById: async (_categoryName: CategoryType, _productId: any): Promise<Product | null> => {
         return null;
@@ -51,13 +51,14 @@ export const CategoriesProvider = ({ children }: IProp) => {
         return null;
     };
 
-    const getProductsByCategory = async (categoryName: CategoryType): Promise<Product[] | null> => {
+    const getProductsByCategory = async (categoryName: CategoryType): Promise<Product[] | []> => {
         const categoryMap = await getCategoriesAndDocuments();
+
         if (categoryMap) {
             const productsByCategory: Product[] = categoryMap[categoryName];
-            return productsByCategory ? productsByCategory : null;
+            return productsByCategory ? productsByCategory : [];
         }
-        return null;
+        return [];
     };
 
     const value = { categoriesMap, getProductById, getProductsByCategory, categoriesList };
