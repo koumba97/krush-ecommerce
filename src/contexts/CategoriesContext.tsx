@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { Product } from '../types/Product';
-import { addCollectionAndDocuments, getCategoriesAndDocuments } from '../utils/firebase/firebase';
-import { ShopData, ShopObject } from '../data/ShopData';
+import { getCategoriesAndDocuments } from '../utils/firebase/firebase';
+import { ShopObject } from '../data/ShopData';
 import { CategoriesData } from '../data/CategoriesData';
 import { CategoryType } from '../types/CategoryType';
 import { Category } from '../types/Category';
@@ -9,10 +9,10 @@ import { Category } from '../types/Category';
 export const CategoriesContext = createContext({
     categoriesMap: {} as ShopObject,
     categoriesList: [] as Category[],
-    getProductsByCategory: async (categoryName: CategoryType): Promise<Product[] | null> => {
+    getProductsByCategory: async (_categoryName: CategoryType): Promise<Product[] | null> => {
         return null;
     },
-    getProductById: async (categoryName: CategoryType, productId: any): Promise<Product | null> => {
+    getProductById: async (_categoryName: CategoryType, _productId: any): Promise<Product | null> => {
         return null;
     },
 });
@@ -23,7 +23,7 @@ interface IProp {
 
 export const CategoriesProvider = ({ children }: IProp) => {
     const [categoriesMap, setCategoriesMap] = useState<ShopObject>({} as ShopObject);
-    const [categoriesList, setCategoriesList] = useState(CategoriesData);
+    const [categoriesList, _setCategoriesList] = useState(CategoriesData);
     //const [productByCategory, setProductByCategory] = useState<Product[]>([]);
 
     // useEffect(() => {
