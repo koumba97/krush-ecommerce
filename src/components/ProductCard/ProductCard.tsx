@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Product as ProductType } from '../../types/Product';
 import { LikeButton } from '../ui/LikeButton/LikeButton';
 import './ProductCard.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface IProps {
     product: ProductType;
@@ -10,6 +10,10 @@ interface IProps {
 
 export const ProductCard = ({ product }: IProps) => {
     const [imageCover, setImageCover] = useState(product.images[0]);
+
+    useEffect(() => {
+        setImageCover(product.images[0]);
+    }, [product]);
 
     return (
         <div className="product-card">
