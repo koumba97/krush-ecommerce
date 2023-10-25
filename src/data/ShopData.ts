@@ -4,6 +4,9 @@ import { PlantsData } from './PlantsData';
 import { DecorationData } from './DecorationData';
 import { FurnitureData } from './FunitureData';
 import { KitchenData } from './KitchenData';
+import { LightingData } from './LightingData';
+import { PosterData } from './PosterData';
+import { StationeryData } from './StationeryData';
 
 export interface ShopObject {
     title: CategoryList;
@@ -30,5 +33,20 @@ export const ShopData: ShopObject[] = [
         title: CategoryList.kitchen,
         iconClass: 'las la-utensils',
         items: KitchenData,
+    },
+    {
+        title: CategoryList.lighting,
+        iconClass: 'lar la-lightbulb',
+        items: LightingData,
+    },
+    {
+        title: CategoryList.poster,
+        iconClass: 'las la-image',
+        items: PosterData,
+    },
+    {
+        title: CategoryList.stationery,
+        iconClass: 'las la-book',
+        items: StationeryData,
     },
 ];

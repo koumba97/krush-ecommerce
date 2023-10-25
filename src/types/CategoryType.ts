@@ -4,7 +4,7 @@ export enum CategoryList {
     furniture = 'furniture',
     kitchen = 'kitchen',
     jewelry = 'jewelry',
-    lamp = 'lamp',
+    lighting = 'lighting',
     poster = 'poster',
     stationery = 'stationery',
 }
@@ -15,6 +15,6 @@ export type CategoryType =
     | CategoryList.furniture
     | CategoryList.kitchen
     | CategoryList.jewelry
-    | CategoryList.lamp
+    | CategoryList.lighting
     | CategoryList.poster
     | CategoryList.stationery;

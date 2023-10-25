@@ -124,7 +124,7 @@ export const DecorationData: Product[] = [
         name: 'Round Mirror',
         category: CategoryList.decoration,
         images: [
-            'https://firebasestorage.googleapis.com/v0/b/krush-3eedb.appspot.com/o/decoration%2Fdecoration-8-2.jpg?alt=media&token=0438b9b4-3ece-4c02-b8cb-ac39c2f46618&_gl=1*rrsq9e*_ga*OTQ5OTY2Mjk4LjE2ODI5NzExMjM.*_ga_CW55HF8NVT*MTY5ODE0MjY2My4zMy4xLjE2OTgxNDczMDguMjMuMC4w',
+            'https://firebasestorage.googleapis.com/v0/b/krush-3eedb.appspot.com/o/decoration%2Fdecoration-8-1.jpg?alt=media&token=31cda158-8a9f-4235-984d-afb7de2ec01c&_gl=1*1dvfle0*_ga*OTQ5OTY2Mjk4LjE2ODI5NzExMjM.*_ga_CW55HF8NVT*MTY5ODE3OTMzNy4zNS4xLjE2OTgxNzk5OTguMzkuMC4w',
             'https://firebasestorage.googleapis.com/v0/b/krush-3eedb.appspot.com/o/decoration%2Fdecoration-8-2.jpg?alt=media&token=0438b9b4-3ece-4c02-b8cb-ac39c2f46618&_gl=1*rrsq9e*_ga*OTQ5OTY2Mjk4LjE2ODI5NzExMjM.*_ga_CW55HF8NVT*MTY5ODE0MjY2My4zMy4xLjE2OTgxNDczMDguMjMuMC4w',
             'https://firebasestorage.googleapis.com/v0/b/krush-3eedb.appspot.com/o/decoration%2Fdecoration-8-3.jpg?alt=media&token=2aefe9b2-944b-44e4-bc4d-fcf3e25b6241&_gl=1*cxbep*_ga*OTQ5OTY2Mjk4LjE2ODI5NzExMjM.*_ga_CW55HF8NVT*MTY5ODE0MjY2My4zMy4xLjE2OTgxNDcyOTYuMzUuMC4w',
         ],
